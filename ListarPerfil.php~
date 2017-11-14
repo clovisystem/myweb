@@ -1,0 +1,420 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<HEAD>
+ <TITLE> - webSystem - </TITLE>
+  <link type="text/css" rel="stylesheet" href="estilo.css"/>
+<style type="text/css">
+
+textarea
+{
+scrollbar-arrow-color: "#FFF";
+scrollbar-base-color: "#FFF";
+scrollbar-3dlight-color:"#FFF";
+scrollbar-highlight-color:"#FFF";
+scrollbar-face-color:"#FFF";
+scrollbar-shadow-color:"#FFF";
+scrollbar-darkshadow-color:"#FFF";
+scrollbar-track-color:"#FFF";
+overflow:hidden;
+margin-bottom:8px;
+}
+
+</style>
+
+</HEAD>
+<BODY bgcolor="#CCCCCC" id="corpo">
+<div align="right">
+<script  Type="text/JavaScript" language="JavaScript" >
+
+
+var now = new Date();
+var hours = now.getHours();
+var minutes = now.getMinutes();
+var timeValue = "" + ((hours >12) ? hours -12 :hours)
+timeValue += ((minutes < 10) ? ":0" : ":") + minutes
+timeValue += (hours >= 12) ? " pm":" am"
+timerRunning = true;
+
+mydate = new Date();
+myday = mydate.getDay();
+mymonth = mydate.getMonth();
+myweekday= mydate.getDate();
+weekday= myweekday;
+myyear= mydate.getYear();
+year =  myyear
+
+
+
+if(myday == 0)
+day = " <b><tt>Domingo,</tt></b> "
+
+else if(myday == 1)
+day = " <b><tt>Segunda,</tt></b> "
+
+else if(myday == 2)
+day = " <b><tt>Terça,</tt></b> "
+
+else if(myday == 3)
+day = " <b><tt>Quarta,</tt></b> "
+
+else if(myday == 4)
+day = " <b><tt>Quinta,</tt></b> "
+
+else if(myday == 5)
+day = " <b><tt>Sexta,</tt></b> "
+
+else if(myday == 6)
+day = " <b><tt>Sábado,</tt></b> "
+
+if(mymonth == 0)
+month = " <b><tt>de Janeiro de</tt></b> "
+
+else if(mymonth ==1)
+month = "<b><tt> de Fevereiro de</tt></b> "
+
+else if(mymonth ==2)
+month = "<b><tt> de Março de</tt></b> "
+
+else if(mymonth ==3)
+month = "<b><tt> de Abril de</tt></b> "
+
+else if(mymonth ==4)
+month = "<b><tt> de Maio de</tt></b> "
+
+else if(mymonth ==5)
+month = "<b><tt> de Junho de</tt></b> "
+
+else if(mymonth ==6)
+month = "<b><tt> de Julho de</tt></b> "
+
+else if(mymonth ==7)
+month = "<b><tt> de Agosto de</tt></b> "
+
+else if(mymonth ==8)
+month = "<b><tt> de Setembro de </tt></b>"
+
+else if(mymonth ==9)
+month = "<b><tt> de Outubro de </tt></b>"
+
+else if(mymonth ==10)
+month = "<b><tt> de Novembro de </tt></b>"
+
+else if(mymonth ==11)
+month = "<b><tt> de Dezembro de </tt></b>"
+
+
+
+year="<b><tt>2010</tt></b> "
+
+
+document.write(day + myweekday + month + year + " - " + timeValue)
+
+
+
+</script>
+</div>
+<br/>
+
+
+<?php
+include "based.php";
+
+
+    $login=isset($_POST['c_email'])?$_POST['c_email']:not null;
+    $password=isset($_POST['c_senha'])?$_POST['c_senha']:null;
+
+$sql_logar = "SELECT email,atividades,textoPerfil,tituloPerfil,estado,cidade,hobby,status,ano,dia,mes FROM users WHERE email = '$login' && senha = '$password' ";
+$exe_logar = mysql_query($sql_logar) or die (mysql_error());
+$fet_logar = mysql_fetch_assoc($exe_logar);
+$num_logar = mysql_num_rows($exe_logar);
+
+if ($num_logar == 0){
+   echo "<body bgcolor='#CCCCCC' id='corpo'>";
+   echo "<p id='Estado' align='center'>Login ou senha invalido.</p><br/><br/>";
+   echo "<br/><center><a href='javascript:window.history.go(-1)'>Clique aqui para voltar.</a><center></body>";
+   if(!filter_var($login,FILTER_VALIDATE_EMAIL)){
+        echo '<body bgcolor="#CCCCCC" id="corpo">';
+        echo'<p id="Estado">Digite um E-mail válido.</p><br/><br/>';
+        echo'</body>';}
+}
+else{
+    @session_start();
+    $_SESSION['c_email']=$login;
+    $_SESSION['c_senha']=$password;
+
+
+    echo $_SESSION['c_email'].' logado(a) com sucesso!<br/>';
+    echo'<form method="post" enctype="multipart/form-data" action="">
+    <input type="button" name="sair" value="Fazer logoff" onclick="history.go(-1)"/> </form>';
+    $localizaContato=$login;
+?>
+
+
+
+
+
+
+
+
+		<div id="flashContent" align="center">
+			<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="1000" height="50" id="guias" align="center">
+				<param name="movie" value="guias.swf" />
+				<param name="quality" value="high" />
+				<param name="bgcolor" value="#cccccc" />
+				<param name="play" value="true" />
+				<param name="loop" value="true" />
+				<param name="wmode" value="window" />
+				<param name="scale" value="showall" />
+				<param name="menu" value="true" />
+				<param name="devicefont" value="false" />
+				<param name="salign" value="" />
+				<param name="allowScriptAccess" value="sameDomain" />
+				<!--[if !IE]>-->
+				<object type="application/x-shockwave-flash" data="guias.swf" width="1000" height="50">
+					<param name="movie" value="guias.swf" />
+					<param name="quality" value="high" />
+					<param name="bgcolor" value="#cccccc" />
+					<param name="play" value="true" />
+					<param name="loop" value="true" />
+					<param name="wmode" value="window" />
+					<param name="scale" value="showall" />
+					<param name="menu" value="true" />
+					<param name="devicefont" value="false" />
+					<param name="salign" value="" />
+					<param name="allowScriptAccess" value="sameDomain" />
+				<!--<![endif]-->
+					<a href="http://www.adobe.com/go/getflash">
+						<img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" />
+					</a>
+				<!--[if !IE]>-->
+				</object>
+				<!--<![endif]-->
+			</object>
+		</div>
+
+<p align="left"><img src="WEBSYSTEM_LOGO/WEBSYSTEM_LOGO.png" width="200" height="60" />          </p>
+
+
+<?php
+
+$listar0=@mysql_query("SELECT tituloPerfil FROM users WHERE email LIKE '%$_POST[c_email]%' AND senha LIKE'%$_POST[c_senha]%' ;",$conexao);
+$listar1=@mysql_query("SELECT email FROM users WHERE email LIKE '%$_POST[c_email]%' AND senha LIKE'%$_POST[c_senha]%' ;",$conexao);
+$listar2=@mysql_query("SELECT textoPerfil FROM users WHERE email LIKE '%$_POST[c_email]%' AND senha LIKE'%$_POST[c_senha]%';",$conexao);
+$listar3=@mysql_query("SELECT atividades FROM users WHERE email LIKE '%$_POST[c_email]%' AND senha LIKE'%$_POST[c_senha]%';",$conexao);
+$listar4=@mysql_query("SELECT hobby FROM users WHERE email LIKE '%$_POST[c_email]%' AND senha LIKE'%$_POST[c_senha]%';",$conexao);
+$listar5=@mysql_query("SELECT status FROM users WHERE email LIKE '%$_POST[c_email]%' AND senha LIKE'%$_POST[c_senha]%';",$conexao);
+$listar6=@mysql_query("SELECT estado FROM users WHERE email LIKE '%$_POST[c_email]%' AND senha LIKE'%$_POST[c_senha]%';",$conexao);
+$listar7=@mysql_query("SELECT cidade FROM users WHERE email LIKE '%$_POST[c_email]%' AND senha LIKE'%$_POST[c_senha]%';",$conexao);
+$listar9=@mysql_query("SELECT sessao FROM mensagens WHERE postar = '$_SESSION[c_email]';",$conexao);
+$listar10=@mysql_query("SELECT comentario FROM mensagens WHERE postar = '$_SESSION[c_email]';",$conexao);
+$listar11=@mysql_query("SELECT dia FROM users WHERE email LIKE '%$_POST[c_email]%' AND senha LIKE'%$_POST[c_senha]%';",$conexao);
+$listar12=@mysql_query("SELECT mes FROM users WHERE email LIKE '%$_POST[c_email]%' AND senha LIKE'%$_POST[c_senha]%';",$conexao);
+echo '<form>';
+echo'<table width="90%" bgcolor="#B5C0C3" align="left" id="body" style="bordercolor:transparent;"><tr>
+<td width="20%" colspan="1"  id="estado"><input type="text" readonly="true"  name="Titulo"
+id="Titulo" value="' .$perfil=@mysql_result($listar0,0,tituloPerfil);
+echo'"/>';
+
+
+echo'</td><td width="50%" valign="bottom"><font color="#06438E" size="3" face="verdana">
+<b>Como sou...</b></td></tr>';
+echo'<tr><td width="50%" colspan="1" height="50" rowspan="1" valign="bottom" >E-mail:&nbsp;&nbsp;
+<input type="text" readonly="true" name="E-mail" size="30" valign="bottom" id="E-mail" value="'
+.@mysql_result($listar1,0,email);
+
+echo'"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="40%" rowspan="5" valign="top"
+bgcolor="#B0C6D2" id="celula1"><input type="text" readonly="true" size="40" valign="bottom" id="Texto"
+value="'.@mysql_result($listar2,0,textoPerfil).'"/>';
+echo '<br/><br/><a href="alteraTexto.php?meuPerfil=ALTERAR PERFIL"><input type="button"
+name="alteraTexto" id="alteraTexto" value="Alterar" /></a></td></tr>';
+
+
+echo'<tr><td width="50%" colspan="1" height="50" valign="bottom"><br/>Minhas atividades:
+&nbsp;&nbsp;<br/><textarea  readonly="true" name="Atividades" valign="bottom" cols="50" rows="2"
+id="Atividades" style="text-align:justify; margin:4px 0px 0px 7px;">' .@mysql_result($listar3,0,atividades);
+echo'</textarea></font></td></tr>';
+echo'<tr><td width="50%" colspan="1" height="50" valign="bottom">Meus hobbies:&nbsp;&nbsp;
+<br/><textarea  readonly="true" name="hobbies" valign="bottom"  cols="50"  rows="2"
+id="hobbies" style="text-align:justify; margin:4px 0px 0px 7px;" ">' .@mysql_result($listar4,0,hobby);
+echo'</textarea></font></td></tr>';
+echo'<tr><td width="50%" colspan="1" height="50" valign="bottom">Status:&nbsp;&nbsp;
+<input type="text" readonly="true" size="30" name="status" valign="bottom" id="status"
+value="' .@mysql_result($listar5,0,status);
+echo'"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></td></tr>';
+echo'<tr><td width="50%" colspan="1" height="50" valign="bottom">Estado:&nbsp;&nbsp;
+<input type="text" readonly="true" size="30" id="estado1" name="estado" valign="bottom"
+value="' .@mysql_result($listar6,0,estado);
+echo'"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></td></tr>';
+echo'<tr><td width="50%" colspan="1" height="50" valign="bottom">Cidade:&nbsp;&nbsp;
+<input type="text" readonly="true" size="30" id="cidade" name="cidade" valign="bottom"
+value="' .@mysql_result($listar7,0,cidade);
+echo'"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></td></tr>';
+echo'<tr><td width="50%" colspan="1" height="50" valign="bottom">Aniversário:&nbsp;&nbsp;
+<input type="text" readonly="true" size="30" id="aniversario" valign="bottom" name="aniversario"
+value="' .@mysql_result($listar11,0,dia).'/'.@mysql_result($listar12,0,mes);
+echo'"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><br/><br/></td></tr>';
+
+echo'<tr><td width="50%" height="30"colspan="1" height="50" valign="bottom"></td>
+<td width="50%" height="30" colspan="1" height="50" valign="bottom"></td></tr>';
+
+?>
+
+
+
+
+<?php
+echo'<tr><td width="100%" colspan="2"  valign="top" align="left" cellspacing="8">
+<br/><br/><b>MINHAS MENSAGENS</b><br/><br/>';
+
+$linhas=@mysql_num_rows($listar9);
+$i=0;
+for($i==0;$i<$linhas;$i++)
+echo '<tr><id ><td  width="100%" colspan="2" id="body" align="left" cellspacing="2" valign="top"
+bgcolor="#9AACCB" id="celula" height="50" align="left" ><form method="post" action="excluir.php"
+id="coluna"><font size="3" color="#0e3aa8" face="impact" style="text-transform:capitalize">
+<input type="text" name="sessao" value="'.@mysql_result($listar9,$i).'" readonly="true"
+style="background:#9AACCB; border:none; width:400px; height:40px; font-family:impact; color:#0e3aa8;
+font-size:20px;"/><hr size="2%" align="right" width="88%" color="#a2c2f2"><input type="text"
+name="comentario" value="'.@mysql_result($listar10,$i).'" readonly="true"  style="background:#9AACCB;
+ border:none; font-family:calibri; color:#136389; font-size:18px;"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ <input type="submit" name="excluir" value="Excluir" style="float:right; margin-right:15px;"/></form>';
+
+
+echo'</font><br/><br/></td></tr>';
+echo'<tr><td>';
+
+echo'<br/><br/><br/>';
+
+echo'<tr><td width="90%" colspan="2" align="left" bgcolor="#B0C6D2">
+<p>
+<b>LOCALIZAR CONTATOS</b><br/>
+
+<input type="hidden" name="logar" value="'.$login.'"/>
+<a href="localizaContatos.php?login='.$perfil.'"><button type="button" name="localizar">
+Localizar contatos</button></a>|<a href="localizaContatos.php?login='.$perfil.'">
+<button type="button" name="Mensagem">Enviar Mensagem </button></a>
+';
+?>
+</p>
+</td></tr>  <tr><td>
+
+<div class="contatos">
+<?php
+$login=$_SESSION['c_email'];
+echo'<br/><br/><b>MEUS CONTATOS</b>   </div>
+<form name="form2" action="" method="get">';
+ $exibeContato=@mysql_query("SELECT contatos FROM ".$perfil.";",$conexao);
+ $linhasContato=@mysql_num_rows($exibeContato);
+ $colunas=3;
+
+ $i=0;
+ $j=0;
+
+ for($i==0;$i<$linhasContato;$i++){
+ echo'<div id="segmento">';
+ echo "\t";
+ for($j==0;$j<$linhasContato;$j++){
+
+
+ echo '<div class="botao"><a href=linkContatos.php?sessao='.@mysql_result($exibeContato,$j,contatos).
+ '&login='.$login.'><div class="texto">'.strtoupper(@mysql_result($exibeContato,$j,contatos));
+ echo'</div></div></a>';
+ echo'&nbsp;&nbsp;';
+ echo'<input type="hidden" name="perfil" value="'; echo $login; echo'" />';
+ echo'</div>';
+ }
+}
+
+
+
+echo'</form>';
+echo'</div>';
+?>
+
+</td></tr>
+
+
+<?php
+ echo'<tr><td width="50%" colspan="2" height="50" valign="bottom" bgcolor="#B0C6D2">
+<b>MINHAS FOTOS</b><br/><br/>';
+
+?>
+
+<?php
+$sql = "SELECT arquivo FROM image WHERE nome ='$localizaContato'  ";
+$limite = @mysql_query("$sql");
+
+while($sql = @mysql_fetch_array ($limite) ) {
+$arquivo = $sql['arquivo'];
+
+echo'<span style="float:left; position:relative; padding:4px 4px 4px 4px;" ><a href='.$arquivo.'>
+<img src='.$arquivo.' width="120"  height="100" border="2" bordercolor="#FF6600"/></a>
+<a href="eliminaFoto.php?arquivo='.$arquivo.'"><button type="button" name="excluir"  />Excluir</button>
+</a>
+</span>
+';
+}
+echo'<br/><br/><br/><br/><br/><br/><h5>Insira sua fotos aqui !</h5>
+<form method="POST" enctype="multipart/form-data" action="upload.php?id='.$perfil.'" > ';
+
+
+echo'Foto :<input name="arquivo" type="file" id="arquivo"  value=Escolher arquivo"/>
+<input name="nome" type="hidden" id="nome" value="';
+?>
+<?php
+echo $localizaContato;
+?>
+<?php
+echo'"/>';
+echo'<br/>
+<input name="tituloPerfil" type="hidden" id="nome" value="';
+?>
+<?php
+echo $perfil;
+?>
+<?php
+echo'"/>';
+echo'<br/>
+';
+
+echo '<input type="submit" name="Submit" value="Enviar Foto" />
+ <br/>';
+
+echo'</form>';
+
+
+
+
+echo'</td></tr><tr><td>';
+echo'<img src="Clov!System.ico" width="120" height="60"/></td></tr>';
+
+
+
+
+echo'<tr><td bgcolor="#B5C0C3" id="body" align="left" cellspacing="4" align="left">';
+
+echo'</td></tr><tr><td>';
+
+
+
+}
+
+
+echo '<input type="hidden" name="meuPerfil" id="meuPerfil" value="'.$login.'"/>';
+echo '<input type="hidden" name="minhaSenha" id="minhaSenha" value="'.$password['c_senha'];
+echo '"/>';
+
+
+
+?>
+</td></tr></table>
+
+<BR>
+<BR>
+
+
+
+</BODY>
+</HTML>
