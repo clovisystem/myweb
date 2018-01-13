@@ -16,7 +16,7 @@
   <link type="text/css" rel="stylesheet" href="../../EstiloFonte.css"/>
   <link rel="shortcut icon" href="../../MY_WEB-LOGO/favicon.ico" type="image/x-icon"/>
   <script language="javascript" src="..\..\jquery-1.6.2.min.js"></script>
-  <script language="javascript" src="AlteraTema.js"></script>
+  <!--<script language="javascript" src="AlteraTema.js"></script>-->
   <script language="javascript" src="..\..\Jquery_Cycle\cycle.all.js"></script>';
   ?>
 <script language="javascript">
@@ -118,7 +118,7 @@ else if(myday == 1)
 day = " <b><tt>Segunda,</tt></b> "
 
 else if(myday == 2)
-day = " <b><tt>Terça,</tt></b> "
+day = " <b><tt>Ter&ccedila,</tt></b> "
 
 else if(myday == 3)
 day = " <b><tt>Quarta,</tt></b> "
@@ -130,7 +130,7 @@ else if(myday == 5)
 day = " <b><tt>Sexta,</tt></b> "
 
 else if(myday == 6)
-day = " <b><tt>Sábado,</tt></b> "
+day = " <b><tt>S&aacute;bado,</tt></b> "
 
 if(mymonth == 0)
 month = " <b><tt>de Janeiro de</tt></b> "
@@ -139,7 +139,7 @@ else if(mymonth ==1)
 month = "<b><tt> de Fevereiro de</tt></b> "
 
 else if(mymonth ==2)
-month = "<b><tt> de Março de</tt></b> "
+month = "<b><tt> de Mar&ccedilo de</tt></b> "
 
 else if(mymonth ==3)
 month = "<b><tt> de Abril de</tt></b> "
@@ -170,7 +170,7 @@ month = "<b><tt> de Dezembro de </tt></b>"
 
 
 
-year='<b><tt>2017</tt></b> '
+year='<b><tt>2018</tt></b> '
 
 
 document.write(day + '<font size=2>' + myweekday + '</font>' + month + year + ' - ' + '<font size=2>' + timeValue + '</font>')
@@ -216,10 +216,10 @@ if ($num_logar == 0){
    echo "<p id='Estado' align='center'>Login ou senha invalido.</p><br/><br/>";
    echo "<br/><center><a href='javascript:window.history.go(-2)'>Clique aqui para voltar.</a><center>";
    echo $login."</body>";
-   echo $password."</body>";
+   //echo $password."</body>";
    if(!filter_var($login,FILTER_VALIDATE_EMAIL)){
         echo '<body bgcolor="#CCCCCC" id="corpo">';
-        echo'<p id="Estado">Digite um E-mail válido.</p><br/><br/>';
+        echo'<p id="Estado">Digite um E-mail v&aacute;lido.</p><br/><br/>';
         echo'</body>';}
 }
 else{
@@ -244,18 +244,20 @@ else{
 	
 ?>
 
-<body>
-
 
 
   
 
-<div id="faixa">
+<table >
+<tr>
+<td id="faixa" style="background-color:gray; border-radius:16px; width:1135px; " >
 <?php if($cont0<1){echo'<div id="link"><a href="#mensagens">Minhas mensagens</a></div><div id="notificacao">0</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';}else{ ?>
-<?php echo'<div id="link"><a href="#mensagens">Minhas mensagens</a></div><div id="notificacao">'.$cont0.'</div>';} ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<?php echo'<div id="link"><a href="#mensagens">Minhas mensagens</a></div><div id="notificacao">'.$cont0.'</div>';}?> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <?php echo'<div id="link1"><a href="#fotos">Minhas fotos</a></div><div id=""></div>'; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <?php echo'<div id="link2"><a href="#contatos">Meus contatos</a></div><div id=""></div>'; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</div>
+</td>
+</tr>
+</table>
 
 <!--		<div id="flashContent" align="center">
 			<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="1000" height="50" id="guias" align="center">
@@ -310,10 +312,10 @@ $listar9=@mysql_query("SELECT sessao FROM mensagens WHERE postar = '$_POST[c_ema
 $listar10=@mysql_query("SELECT comentario FROM mensagens WHERE postar = '$_POST[c_email]' ORDER BY id DESC LIMIT 50;",$conexao);
 $listar11=@mysql_query("SELECT dia FROM users WHERE email LIKE '%$_POST[c_email]%' AND senha LIKE'%$_POST[c_senha]%';",$conexao);
 $listar12=@mysql_query("SELECT mes FROM users WHERE email LIKE '%$_POST[c_email]%' AND senha LIKE'%$_POST[c_senha]%';",$conexao);
-$listar13=@mysql_query("SELECT coalesce(diaDaSemana,'Não definido') as diaDaSemana FROM mensagens WHERE postar  = '$_POST[c_email]' ORDER BY id DESC
+$listar13=@mysql_query("SELECT coalesce(diaDaSemana,'Nao definido') as diaDaSemana FROM mensagens WHERE postar  = '$_POST[c_email]' ORDER BY id DESC
  LIMIT 50;",$conexao);
-$listar14=@mysql_query("SELECT coalesce(mes,'Não definido') as mes FROM mensagens WHERE postar  = '$_POST[c_email]' ORDER BY id DESC LIMIT 50;",$conexao);
-$listar15=@mysql_query("SELECT coalesce(ano,'Não definido') as ano FROM mensagens WHERE postar  = '$_POST[c_email]' ORDER BY id DESC;",$conexao);
+$listar14=@mysql_query("SELECT coalesce(mes,'Nao definido') as mes FROM mensagens WHERE postar  = '$_POST[c_email]' ORDER BY id DESC LIMIT 50;",$conexao);
+$listar15=@mysql_query("SELECT coalesce(ano,'Nao definido') as ano FROM mensagens WHERE postar  = '$_POST[c_email]' ORDER BY id DESC;",$conexao);
 /*$listar13=@mysql_query("SELECT religiao FROM users WHERE email LIKE '%$_POST[c_email]%' AND senha LIKE'%$_POST[c_senha]%' ;",$conexao);
 $listar14=@mysql_query("SELECT versiculo FROM users WHERE email LIKE '%$_POST[c_email]%' AND senha LIKE'%$_POST[c_senha]%' ;",$conexao);*/
 
@@ -348,7 +350,7 @@ name="alteraReligiao" id="alteraTexto" value="Alterar" /></a></td></tr>';
 
 echo'</td><tr><td style="color:transparent;">1</td></tr><tr><td style="color:transparent;">2</td></tr>
 <td width="30%"  align="left" valign="bottom" colspan="2"><font color="#06438E" size="3" face="verdana">
-<b>Meu Versículo Favorito:&nbsp; <font color="orange" size="2" face="verdana">'.@mysql_result($listar14,0,versiculo).'</b>--></td>';
+<b>Meu Versï¿½culo Favorito:&nbsp; <font color="orange" size="2" face="verdana">'.@mysql_result($listar14,0,versiculo).'</b>--></td>';
 echo'<td width="20%"  colspan="3" align="left" valign="bottom" style="color:transparent;"><font  size="3" face="verdana">
 <br/><br/><a href="../../AlteraPerfil.php?titulo='.strtolower($perfil).'"><input type="button"
 name="alteraTexto" id="alteraTexto" value="Alterar nome do perfil" style="border-radius:80px; background-color:white;"/></a></td></tr>';*/
@@ -359,7 +361,7 @@ name="alteraTexto" id="alteraTexto" value="Alterar nome do perfil" style="border
 echo'</td><tr><td style="color:transparent;">1</td></tr><tr><td style="color:transparent;">2</td></tr>
 <td width="30%"  align="left" valign="bottom"><font color="#06438E" size="3" face="verdana">
 <b>Minhas informa&ccedil;&otilde;es</b>&nbsp;<a href="../../alteraTexto.php?meuPerfil='.$perfil.'"><input type="button"
-name="alteraInformaçoes" id="alteraTexto" value="Alterar Informa&ccedil;&otilde;es" style="border-radius:80px; background-color:white;"/></a></td>
+name="alteraInformaï¿½oes" id="alteraTexto" value="Alterar Informacoes" style="border-radius:80px; background-color:white;"/></a></td>
 <td width="50%"  colspan="3" align="left" valign="bottom"><font color="#06438E" size="3" face="verdana">
 <b>Sobre mim...</b></td></tr>';
 echo'<tr><td width="50%" colspan="1" height="50" rowspan="1" valign="bottom" ><div id="campo" style="background-image:url(../../BACKGROUNDS/CampoMyWeb.png);
@@ -371,7 +373,7 @@ echo'"/></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="40%" rowspan="
 bgcolor="#B0C6D2" id="celula1"><textarea name="texto" readonly="true"  valign="bottom"  id="Texto" wrap="on" cols="45" rows="10"
 value="" >'.@mysql_result($listar2,0,textoPerfil).'</textarea>';
 echo '<br/><br/><a href="../../alteraTexto.php?meuPerfil='.$perfil.'"><input type="button"
-name="alteraTexto" id="alteraTexto" value="Alterar Descrição" style="border-radius:80px; background-color:white;"/></a></td></tr>';
+name="alteraTexto" id="alteraTexto" value="Alterar Descricao" style="border-radius:80px; background-color:white;"/></a></td></tr>';
 
 
 echo'<tr><td width="50%" colspan="1" height="80" valign="bottom"><div id="campo1" style=" background-image:url(../../BACKGROUNDS/CampoMyWebTextArea.png);
@@ -475,7 +477,7 @@ padding:6px 0px 0px 16px;">
  //$colunas=4;
 
  //$i=0;
- $j=1; //faz com que o seu perfil não apareça na página
+ $j=1; //faz com que o seu perfil nï¿½o apareï¿½a na pï¿½gina
 
  //for($i==0;$i<$linhasContato;$i++){
  //echo'<div id="segmento">';
@@ -486,13 +488,13 @@ $contact=@mysql_result($exibeContato,$j,contatos);
 $contact=str_replace("_"," ",$contact);
 //if($contact=$perfil1){echo "";}
 
- echo '<div class="botao"><a href=../../linkContatos.php?sessao='.@mysql_result($exibeContato,$j,contatos).'&login='.$perfil.'>';
+ echo '<div class="botao"><a href="../../linkContatos.php?sessao='.@mysql_result($exibeContato,$j,contatos).'&login='.$perfil.'">';
  $meusContatos=@mysql_result($exibeContato,$j,contatos);
  //$sql = "SELECT imagem FROM  $perfil" ; 
  //$limite = @mysql_query($sql);
  //$sql = @mysql_fetch_array($limite);
  //$arquivo = $sql['arquivo'];
- echo'<div class="imagemContato"><img src=../../'.@mysql_result($exibeContato,$j,imagem).' width="60"  height="80"/>';
+ echo'<div class="imagemContato"><img src="../../'.@mysql_result($exibeContato,$j,imagem).'" width="60"  height="80" /></div>';
  //src="arquivos/97b77915013e0a68dea8c323be0983d4.jpg"
  echo'<div class="texto">'.strtoupper($contact);
  echo'</a></div></div>';
@@ -516,7 +518,7 @@ $contact=str_replace("_"," ",$contact);
 //}
 
 
-echo'<div style="float:left; position:absolute;">';
+echo'<div style="float:left; position:absolute; margin-top:-96px;">';
   $anivDia=@mysql_query("SELECT dia FROM users WHERE tituloPerfil =".$meusContatos.";",$conexao);
   $anivMes=@mysql_query("SELECT mes FROM users WHERE tituloPerfil =".$meusContatos.";",$conexao);
   //$anivAno=@mysql_query("SELECT ano FROM users WHERE tituloPerfil =".$perfil.";",$conexao);
@@ -528,7 +530,7 @@ echo'<div style="float:left; position:absolute;">';
   $anivPerfil=$anivDia."/".$anivMes;
   
   if($anivPerfil = $dataAtual){
-  echo"<br/><br/><br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;<font color='green'><b>Hoje é aniversário de ".str_replace("_"," ",$meusContatos);
+  echo"<br/><br/><br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;<font color='green'><b>Hoje e aniversario de ".str_replace("_"," ",$meusContatos);
   }
 echo'</b></font></div>';
 
@@ -589,14 +591,18 @@ width:60px; height:20px; border-radius:8px;" ></button></div><br/>
 
 
 <?php
+$login=isset($_POST['c_email'])?$_POST['c_email']:null;
+//echo $login;
+$tema=isset($_POST["tema"])?$_POST["tema"]:null;
 echo'<input type="hidden" name="emailPerfil" value="'.$login.'"/>
+
 </form>';
 
 ?>
 
 <div style="position:absolute; float:left; margin-left:15px; margin-top:40px; padding-bottom:20px;">
 <button type="button" name="tema" id="tema" value="#B5C0C3" style="background-color:#B5C0C3;
-width:180px; height:20px; border-radius:8px; " onClick='parent.location="javascript:location.reload()"'>Atualizar p&aacute;gina</button>
+width:180px; height:20px; border-radius:8px; " onClick='parent.location="javascript:location.reload()"'>Atualizar pagina</button>
 </div><br/>
 
 <!--<script>
@@ -639,7 +645,7 @@ echo'<div style="text-align:top; background:#CCCCCC; float:left; position:relati
 echo'<form name="fotoPrincipal" enctype="multipart/form-data" method="post action="">
  <a href='.$arquivo0;
 echo'><img src=../../'.$arquivo0;
-echo' width="150"  height="180" border=2 bordercolor="#FF6600" alt="Sua foto n&atilde;o p&ocirc;de ser carregada, tente outra."/></a></fotm>
+echo' width="150"  height="180" border=2 bordercolor="#FF6600" alt="Sua foto n&atilde;o p&ocirc;de ser carregada, tente outra."/></a></form>
 <form method="POST" enctype="multipart/form-data" action="../../AtualizaFoto.php?id='.$perfil.'" > ';
 echo'
 <input name="nome" type="hidden" id="nome" value="';
@@ -778,7 +784,7 @@ echo'<tr><td>';
 echo'</td></tr><tr><td>';
 
 error_reporting(0);
-ini_set(“display_errors”, 0 );
+ini_set(ï¿½display_errorsï¿½, 0 );
 
 $perfilAltera=str_replace(" ","_",$perfil1);
 $perfilAltera1=strtolower($perfilAltera);

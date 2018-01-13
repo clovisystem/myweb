@@ -42,7 +42,7 @@ else if(myday == 1)
 day = " <b><tt>Segunda,</tt></b> "
 
 else if(myday == 2)
-day = " <b><tt>Terça,</tt></b> "
+day = " <b><tt>Terccedil;a,</tt></b> "
 
 else if(myday == 3)
 day = " <b><tt>Quarta,</tt></b> "
@@ -54,7 +54,7 @@ else if(myday == 5)
 day = " <b><tt>Sexta,</tt></b> "
 
 else if(myday == 6)
-day = " <b><tt>Sábado,</tt></b> "
+day = " <b><tt>Saccute;bado,</tt></b> "
 
 if(mymonth == 0)
 month = " <b><tt>de Janeiro de</tt></b> "
@@ -63,7 +63,7 @@ else if(mymonth ==1)
 month = "<b><tt> de Fevereiro de</tt></b> "
 
 else if(mymonth ==2)
-month = "<b><tt> de Março de</tt></b> "
+month = "<b><tt> de Marccedil;o de</tt></b> "
 
 else if(mymonth ==3)
 month = "<b><tt> de Abril de</tt></b> "
@@ -94,7 +94,7 @@ month = "<b><tt> de Dezembro de </tt></b>"
 
 
 
-year='<b><tt>2017</tt></b> '
+year='<b><tt>2018</tt></b> '
 
 
 document.write(day + '<font size=2>' + myweekday + '</font>' + month + year + ' - ' + '<font size=2>' + timeValue + '</font>')
@@ -120,7 +120,7 @@ include"based.php";
  switch($mes){
  case 1:$mes='Janeiro';break;
  case 2:$mes='Fevereiro';break;
- case 3:$mes='Março';break;
+ case 3:$mes='Marccedil;o';break;
  case 4:$mes='Abril';break;
  case 5:$mes='Maio';break;
  case 6:$mes='Junho';break;
@@ -136,11 +136,11 @@ $intro=@mysql_query("INSERT INTO mensagens(comentario,postar,sessao,diaDaSemana,
 ,$conexao);
 
 
-
+/*
 $para=$postar;
 $nome=$sessao
 $assunto='Mensagem do myWeb.';
-$mensagem='Você recebeu uma mensagem no myWeb, acesse: http://myweb.is-great.net';
+$mensagem='Voce recebeu uma mensagem no myWeb, acesse: http://myweb.is-great.net';
 $headers="Content-Type:text/html; charset=UTF-8\n";
 $headers.="From:mx.byetcluster.com<clovisystem@yahoo.com>\n";//vai set mostrado que o email partiu deste email e seguido do nome
 $headers.="X-Sender:<clovisystem@yahoo.com\n";//email do servidor que enviou
@@ -149,8 +149,8 @@ $headers.="X-IP: ".$_SERVER['REMOTE_ADDR']."\n";
 $headers.="Return-Path:<clovisystem@yahoo.com>\n";//caso a mensagem seja respondida vai para esse email
 $headers.="MIME-version:1.0\n";
 
-mail($para,$assunto,$mensagem,$headers); //função que faz o envio de email
-
+mail($para,$assunto,$mensagem,$headers); //funï¿½ï¿½o que faz o envio de email
+*/
 
 echo'<br/><br/> ';
       if($intro)
@@ -163,7 +163,7 @@ echo'<br/><br/> ';
       {
            echo'<center><p id="Estado">MENSAGENS</p>';
 
-          echo'A mensagem não pode ser enviada.<br/><br/>';
+          echo'A mensagem nao pode ser enviada.<br/><br/>';
           echo'<input type="button"  value="Voltar" onclick="history.go(-1)"/></center>';}
 
 

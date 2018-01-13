@@ -46,7 +46,7 @@ else if(myday == 1)
 day = " <b><tt>Segunda,</tt></b> "
 
 else if(myday == 2)
-day = " <b><tt>Terça,</tt></b> "
+day = " <b><tt>Ter&ccedila,</tt></b> "
 
 else if(myday == 3)
 day = " <b><tt>Quarta,</tt></b> "
@@ -58,7 +58,7 @@ else if(myday == 5)
 day = " <b><tt>Sexta,</tt></b> "
 
 else if(myday == 6)
-day = " <b><tt>Sábado,</tt></b> "
+day = " <b><tt>S&aacute;bado,</tt></b> "
 
 if(mymonth == 0)
 month = " <b><tt>de Janeiro de</tt></b> "
@@ -67,7 +67,7 @@ else if(mymonth ==1)
 month = "<b><tt> de Fevereiro de</tt></b> "
 
 else if(mymonth ==2)
-month = "<b><tt> de Março de</tt></b> "
+month = "<b><tt> de Mar&ccedilo de</tt></b> "
 
 else if(mymonth ==3)
 month = "<b><tt> de Abril de</tt></b> "
@@ -98,7 +98,7 @@ month = "<b><tt> de Dezembro de </tt></b>"
 
 
 
-year='<b><tt>2016</tt></b> '
+year='<b><tt>2018</tt></b> '
 
 
 document.write(day + '<font size=2>' + myweekday + '</font>' + month + year + ' - ' + '<font size=2>' + timeValue + '</font>')
@@ -131,28 +131,28 @@ include "based.php";
 
 $tituloPerfil=isset($_POST['tituloPerfil'])?$_POST['tituloPerfil']:null;
 $tituloPerfil=str_replace(" ","_",$tituloPerfil);
-$tituloPerfil=preg_replace('/[^[:alpha:]_]/', '',$tituloPerfil);
+//$tituloPerfil=preg_replace('/[^[:alpha:]_]/', '',$tituloPerfil);
 $tituloPerfil1=isset($_POST['tituloPerfil1'])?$_POST['tituloPerfil1']:null;
 $tituloPerfil1=str_replace(" ","_",$tituloPerfil1);
-$tituloPerfil1=preg_replace('/[^[:alpha:]_]/', '',$tituloPerfil1);
+//$tituloPerfil1=preg_replace('/[^[:alpha:]_]/', '',$tituloPerfil1);
 $senhaDigitada=isset($_POST['c_senha'])?$_POST['c_senha']:null;
-$senhaDigitada=preg_replace('/[^[:alnum:]_]/', '',$senhaDigitada);
+//$senhaDigitada=preg_replace('/[^[:alnum:]_]/', '',$senhaDigitada);
 $senhaConfirmada=isset($_POST['redigiteSenha'])?$_POST['redigiteSenha']:null;
 $email=$_POST['c_email']."@".$_POST['dominio'];
-$email=preg_replace('/[^[:alpha:]_]/', '',$email);
+//$email=preg_replace('/[^[:alpha:]_]/', '',$email);
 
 $pesq = @mysql_query("SELECT email FROM users WHERE email = '$email';", $conexao);
 		$mostra = @mysql_num_rows($pesq);
 		if ( $mostra > 0 ) {
-		echo "<script>alert(\"O nick que você digitou já existe em nosso bando de dados, tente outro.\");
+		echo "<script>alert(\"O nick que voce digitou ja existe em nosso bando de dados, tente outro.\");
 		window.location = 'javascript:history.back(-1)';
 		</script>";
 		}
 
 if($senhaDigitada!=$senhaConfirmada or ($_POST['c_senha'] == "" || $_POST['redigiteSenha'] == "" || $_POST['c_email'] 
 == ""|| $_POST['tituloPerfil'] == ""|| $_POST['tituloPerfil1'] == ""|| $_POST['estado'] == ""|| $_POST['cidade'] == ""))
-{echo '<body bgcolor="#CCCCCC"><BR><BR><font color="red"><b>'.$tituloPerfil.$tituloPerfil1.' ,não pôde ser cadastrado,
- reveja a sua senha ou se algum campo não foi preenchido.</b></font></body>';
+{echo '<body bgcolor="#CCCCCC"><BR><BR><font color="red"><b>'.$tituloPerfil.$tituloPerfil1.' ,nao pode ser cadastrado,
+ reveja a sua senha ou se algum campo nao foi preenchido.</b></font></body>';
  echo"<form><input type='button'  value='Voltar' onclick='history.go(-1)'></form>";
  
 		
@@ -165,18 +165,37 @@ else
 {
 
 $incluiUsuario=strtoupper($_POST['tituloPerfil'])."_".strtoupper($_POST['tituloPerfil1']);
-$incluiUsuario=str_replace("ç","C",$incluiUsuario);
+$incluiUsuario=str_replace("Ã§","C",$incluiUsuario);
+
 
 
 function tirarAcentos($incluiUsuario){
-    return preg_replace(array("/(á|à|ã|â|ä)/","/(Á|À|Ã|Â|Ä)/","/(é|è|ê|ë)/","/(É|È|Ê|Ë)/","/(í|ì|î|ï)/","/(Í|Ì|Î|Ï)/","/(ó|ò|õ|ô|ö)/","/(Ó|Ò|Õ|Ô|Ö)/","/(ú|ù|û|ü)/","/(Ú|Ù|Û|Ü)/","/(ñ)/","/(Ñ)/"),explode(" ","a A e E i I o O u U n N"),$incluiUsuario);
+    return preg_replace(array("/(ï¿½|ï¿½|ï¿½|ï¿½|ï¿½)/","/(ï¿½|ï¿½|ï¿½|ï¿½|ï¿½)/","/(ï¿½|ï¿½|ï¿½|ï¿½)/","/(ï¿½|ï¿½|ï¿½|ï¿½)/","/(ï¿½|ï¿½|ï¿½|ï¿½)/","/(ï¿½|ï¿½|ï¿½|ï¿½)/","/(ï¿½|ï¿½|ï¿½|ï¿½|ï¿½)/","/(ï¿½|ï¿½|ï¿½|ï¿½|ï¿½)/","/(ï¿½|ï¿½|ï¿½|ï¿½)/","/(ï¿½|ï¿½|ï¿½|ï¿½)/","/(ï¿½)/","/(ï¿½)/"),explode(" ","a A e E i I o O u U n N"),$incluiUsuario);
 }
 
 //echo tirarAcentos($incluiUsuario);
 
+$incluiUsuario=str_replace(" ","_",$incluiUsuario);
+$incluiUsuario=str_replace("Ã","A",$incluiUsuario);
+$incluiUsuario=str_replace("Ã€","A",$incluiUsuario);
+$incluiUsuario=str_replace("Ãƒ","A",$incluiUsuario);
+$incluiUsuario=str_replace("Ã‚","A",$incluiUsuario);
+$incluiUsuario=str_replace("Ã‰","E",$incluiUsuario);
+$incluiUsuario=str_replace("Ãˆ","E",$incluiUsuario);
+$incluiUsuario=str_replace("ÃŠ","E",$incluiUsuario);
+$incluiUsuario=str_replace("Ã","I",$incluiUsuario);
+$incluiUsuario=str_replace("ÃŒ","I",$incluiUsuario);
+$incluiUsuario=str_replace("Ã","I",$incluiUsuario);
+$incluiUsuario=str_replace("Ã“","O",$incluiUsuario);
+$incluiUsuario=str_replace("Ã’","O",$incluiUsuario);
+$incluiUsuario=str_replace("Ã”","O",$incluiUsuario);
+$incluiUsuario=str_replace("Ã•","O",$incluiUsuario);
+$incluiUsuario=str_replace("Ãš","U",$incluiUsuario);
+$incluiUsuario=str_replace("Ã™","U",$incluiUsuario);
+$incluiUsuario=str_replace("Ã›","U",$incluiUsuario);
 
 
-
+//$incluiUsuario=strtolower($incluiUsuario);
 $email=$_POST['c_email']."@".$_POST['dominio'];
 if($mostra<1){
 $resultado=@mysql_query("Insert into users (tituloPerfil,email,senha,estado,cidade,dia,mes,ano,atividades,
@@ -205,7 +224,7 @@ VALUES('".tirarAcentos(str_replace(" ","_",$incluiUsuario))."','$email','$_POST[
 
 
 #if($emailEnviado == $linha){
-#echo "<script>window.alert(\"O nick que você digitou já existe em nosso bando de dados, tente outro.\");
+#echo "<script>window.alert(\"O nick que voce digitou ja existe em nosso bando de dados, tente outro.\");
 #       window.location = 'javascript:history.back(-1)';
 #        </script>";}
 // como geral gosta de separa
@@ -222,8 +241,9 @@ STYLE="border:0; height:18px;
 width:200px; background:#999999;"/ ></form>';
 echo'</body>';
 $TabelaPerfil=$tituloPerfil.'_'.$tituloPerfil1;
-$TabelaPerfil=str_replace("ç","c",$TabelaPerfil);
+$TabelaPerfil=str_replace("Ã§","c",$TabelaPerfil);
 $TabelaPerfil=tirarAcentos($TabelaPerfil);
+$TabelaPerfil=strtolower($TabelaPerfil);
 $tabela=@mysql_query("CREATE TABLE ".$TabelaPerfil."(
 codigo integer primary key auto_increment,
 id varchar(255),
@@ -279,7 +299,7 @@ $inserir2=@mysql_query( $incluImagem2 )or die (mysql_error());
 
 //$inserir=@mysql_query($incluImagem) or die (mysql_error());
 //$inserir.=@mysql_query($incluImagem1) or die (mysql_error());
-@mysql_close();//fecha conexão
+@mysql_close();//fecha conexï¿½o
 
 
 
@@ -361,7 +381,7 @@ Data de nascimento:<select name="dia" readonly="true">
 <select name="mes" readonly="true">
 <option value="01" Selected>Janeiro</option>
 <option value="02">Fevereiro</option>
-<option value="03">Março</option>
+<option value="03">Marï¿½o</option>
 <option value="04">Abril</option>
 <option value="05">Maio</option>
 <option value="06">Junho</option>
@@ -480,9 +500,9 @@ Data de nascimento:<select name="dia" readonly="true">
 <option value="1960">1930</option>
 </select> <br/> <br/>
 Atividades:<br/>
-<textarea  name="atividades"  cols="40" rows="6" wrap="on" scrolling="yes" readonly="true">O que você faz?</textarea><br/>
+<textarea  name="atividades"  cols="40" rows="6" wrap="on" scrolling="yes" readonly="true">O que vocï¿½ faz?</textarea><br/>
 Hobby:<br/>
-<textarea name="hobby"  cols="40" rows="6" wrap="on" scrolling="yes" readonly="true">De que você gosta?</textarea><br/>
+<textarea name="hobby"  cols="40" rows="6" wrap="on" scrolling="yes" readonly="true">De que vocï¿½ gosta?</textarea><br/>
 Texto do Perfil:<br/>
 <textarea name="textoPerfil"  cols="40" rows="6" wrap="on"
 scrolling="yes" readonly="true">Digite aqui o que voc&ecirc; quer exibir no seu perfil.</textarea><br/>

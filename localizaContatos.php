@@ -165,7 +165,7 @@ document.write(day + '<font size=2>' + myweekday + '</font>' + month + year + ' 
 
 <body>
 
-<div id="faixa">
+<div id="faixa" style="margin-left:60px;">
 <a href="https://www.google.com.br/" target="_blank">Google</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="http://www.infojobs.com.br/" target="_blank">Infojobs</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="http://g1.globo.com/" target="_blank">G1</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -208,7 +208,7 @@ document.write(day + '<font size=2>' + myweekday + '</font>' + month + year + ' 
 <!--			</object>
 		</div>
 	</body>-->
-<p align="left"><img src="MY_WEB-LOGO/MyWeb.png" width="200" height="60" /></p>
+<p align="left" style="margin-left:60px;><img src="MY_WEB-LOGO/MyWeb.png" width="200" height="60" /></p>
     <br>
 
 

@@ -62,7 +62,7 @@ else if(myday == 1)
 day = " <b><tt>Segunda,</tt></b> "
 
 else if(myday == 2)
-day = " <b><tt>Terça,</tt></b> "
+day = " <b><tt>Ter&ccedila,</tt></b> "
 
 else if(myday == 3)
 day = " <b><tt>Quarta,</tt></b> "
@@ -74,7 +74,7 @@ else if(myday == 5)
 day = " <b><tt>Sexta,</tt></b> "
 
 else if(myday == 6)
-day = " <b><tt>Sábado,</tt></b> "
+day = " <b><tt>S&aacute;bado,</tt></b> "
 
 if(mymonth == 0)
 month = " <b><tt>de Janeiro de</tt></b> "
@@ -83,7 +83,7 @@ else if(mymonth ==1)
 month = "<b><tt> de Fevereiro de</tt></b> "
 
 else if(mymonth ==2)
-month = "<b><tt> de Março de</tt></b> "
+month = "<b><tt> de Mar&ccedilo de</tt></b> "
 
 else if(mymonth ==3)
 month = "<b><tt> de Abril de</tt></b> "
@@ -114,7 +114,7 @@ month = "<b><tt> de Dezembro de </tt></b>"
 
 
 
-year='<b><tt>2017</tt></b> '
+year='<b><tt>2018</tt></b> '
 
 
 document.write(day + '<font size=2>' + myweekday + '</font>' + month + year + ' - ' + '<font size=2>' + timeValue + '</font>')
@@ -126,7 +126,7 @@ document.write(day + '<font size=2>' + myweekday + '</font>' + month + year + ' 
 <body>
 
 
-<div id="faixa">
+<div id="faixa" style="margin-left:60px;">
 <a href="https://www.google.com.br/" target="_blank">Google</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="http://www.infojobs.com.br/" target="_blank">Infojobs</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="http://g1.globo.com/" target="_blank">G1</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -169,7 +169,7 @@ document.write(day + '<font size=2>' + myweekday + '</font>' + month + year + ' 
 <!--			</object>
 		</div>
 	</body>-->
-<p align="left"><img src="MY_WEB-LOGO/MyWeb.png" width="200" height="60" /></p>
+<p align="left" style="margin-left:60px;"><img src="MY_WEB-LOGO/MyWeb.png" width="200" height="60" /></p>
     <br>
 
 
@@ -198,8 +198,8 @@ $sessao1=str_replace("_"," ",$sessao);
 //"#B5C0C3"
 echo'<body bgcolor="#CCCCCC" id="corpo">';
 echo'<table width="90%" bgcolor="'.$cor.'" id="body" align="center"><tr><td colspan="3" align="left">';
-echo '<input type="text" name="logon" value="'.str_replace("_"," ",$login).'" readonly="true"  STYLE="background-color:transparent; border:none; font-size:18px; font-family:calibri,arial; color:green; font-weight:bold;"/>, esta é a Página do perfil de <input type="text" name="logon" value="'.strtoupper($sessao1).'" readonly="true" size="16" STYLE="background-color:transparent; border:none; font-size:18px; font-family:calibri,arial; color:green; font-weight:bold;"/>';
-echo'</input>&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" value="Voltar" onclick="history.back();" />';
+echo '<input type="text" name="logon" value="'.str_replace("_"," ",$login).'" readonly="true"  STYLE="background-color:transparent; border:none; font-size:18px; font-family:calibri,arial; color:green; font-weight:bold;"/>, esta e a Pagina do perfil de <input type="text" name="logon" value="'.strtoupper($sessao1).'" readonly="true" size="16" STYLE="background-color:transparent; border:none; font-size:18px; font-family:calibri,arial; color:green; font-weight:bold;"/>';
+echo'</input>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" value="Voltar" onclick="history.back();" />';
 echo'</td></tr>';
 
 
