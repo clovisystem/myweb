@@ -4,7 +4,7 @@
  <link rel="shortcut icon" href="MY_WEB-LOGO/favicon.ico" type="image/x-icon"/>
 </HEAD>
 <BODY>
-<div align="right">
+<div align="">
 <script  Type="text/JavaScript" language="JavaScript" >
 
 
@@ -33,7 +33,7 @@ else if(myday == 1)
 day = " <b><tt>Segunda,</tt></b> "
 
 else if(myday == 2)
-day = " <b><tt>Terça,</tt></b> "
+day = " <b><tt>Ter&ccedil;a,</tt></b> "
 
 else if(myday == 3)
 day = " <b><tt>Quarta,</tt></b> "
@@ -45,7 +45,7 @@ else if(myday == 5)
 day = " <b><tt>Sexta,</tt></b> "
 
 else if(myday == 6)
-day = " <b><tt>Sábado,</tt></b> "
+day = " <b><tt>S&aacute;bado,</tt></b> "
 
 if(mymonth == 0)
 month = " <b><tt>de Janeiro de</tt></b> "
@@ -54,7 +54,7 @@ else if(mymonth ==1)
 month = "<b><tt> de Fevereiro de</tt></b> "
 
 else if(mymonth ==2)
-month = "<b><tt> de Março de</tt></b> "
+month = "<b><tt> de Mar&ccedil;o de</tt></b> "
 
 else if(mymonth ==3)
 month = "<b><tt> de Abril de</tt></b> "
@@ -85,7 +85,7 @@ month = "<b><tt> de Dezembro de </tt></b>"
 
 
 
-year='<b><tt>2017</tt></b> '
+year='<b><tt>2018</tt></b> '
 
 
 document.write(day + '<font size=2>' + myweekday + '</font>' + month + year + ' - ' + '<font size=2>' + timeValue + '</font>')
@@ -96,7 +96,7 @@ document.write(day + '<font size=2>' + myweekday + '</font>' + month + year + ' 
 </div>
 <br/>
 
-<?
+<?php
 
  //@session_start();
     //$_SESSION['c_email'];
@@ -106,7 +106,13 @@ document.write(day + '<font size=2>' + myweekday + '</font>' + month + year + ' 
   $perfil=isset($_POST['perfil'])?$_POST['perfil']:null;
   $logado=isset($_POST['logado'])?$_POST['logado']:null;
   $login=isset($_GET['login'])?$_GET['login']:null;
-  $email=@mysql_query("SELECT * FROM users WHERE tituloPerfil='$perfil';",$conexao);
+  $email=@mysql_query("SELECT * FROM _users WHERE tituloPerfil='$perfil';",$conexao);
+  $diaAniv=@mysql_query("SELECT * FROM _users WHERE tituloPerfil='$perfil';",$conexao);
+  $diaAniv=@mysql_fetch_array($diaAniv);
+  $diaAniv=$diaAniv["dia"];
+  $mesAniv=@mysql_query("SELECT * FROM _users WHERE tituloPerfil='$perfil';",$conexao);
+  $mesAniv=@mysql_fetch_array($mesAniv);
+  $mesAniv=$mesAniv["mes"];
   $fetchemail=@mysql_fetch_array($email);
   $fetchemail=$fetchemail["email"];
   //$login1=$login;
@@ -125,7 +131,7 @@ document.write(day + '<font size=2>' + myweekday + '</font>' + month + year + ' 
  switch($mes){
  case 1:$mes='Janeiro';break;
  case 2:$mes='Fevereiro';break;
- case 3:$mes='Março';break;
+ case 3:$mes='Mar&ccedil;o';break;
  case 4:$mes='Abril';break;
  case 5:$mes='Maio';break;
  case 6:$mes='Junho';break;
@@ -137,11 +143,8 @@ document.write(day + '<font size=2>' + myweekday + '</font>' + month + year + ' 
  case 12:$mes='Dezembro';break;
  }
    //$fetchFoto1="arquivos/0,,11266601,00.jpg";
-  $adiciona=@mysql_query("INSERT INTO ".strtolower($login)." (contatos,imagem) VALUES('".strtolower($perfil)."','$fetchFoto1');"
-  ,$conexao);
-  $adicionaMensagem=@mysql_query("INSERT INTO mensagens (comentario,postar,sessao,diaDaSemana,mes,ano) 
-  VALUES('Te adicionei.','$fetchemail','$login','$diaDaSemana','$mes','$ano');"
-  ,$conexao);
+  $adiciona=@mysql_query("INSERT INTO ".strtolower($login)." (contatos,imagem,dia,mes) VALUES('".strtolower($perfil)."','".$fetchFoto1."','".$diaAniv."','".$mesAniv."');",$conexao);
+  $adicionaMensagem=@mysql_query("INSERT INTO _mensagens (comentario,postar,sessao,diaDaSemana,mes,ano)VALUES('Te adicionei.','".$fetchemail."','".$login."','".$diaDaSemana."','".$mes."','".$ano."');",$conexao);
   
   
   
@@ -154,7 +157,7 @@ document.write(day + '<font size=2>' + myweekday + '</font>' + month + year + ' 
   $incluiFoto2=@mysql_query($foto2);
   $fetchFoto2=@mysql_fetch_array($incluiFoto2);
   $fetchFoto3=$fetchFoto2['imagem'];
-  $adiciona1=@mysql_query("INSERT INTO ".strtolower($perfil)." (contatos,imagem) VALUES('".strtolower($login)."','$fetchFoto3');",$conexao);
+  $adiciona1=@mysql_query("INSERT INTO ".strtolower($perfil)." (contatos,imagem) VALUES('".strtolower($login)."','".$fetchFoto3."');",$conexao);
 	
 	//$engatilha=@mysql_query("CREATE TRIGGER 'usuario'.'IncluiContato' AFTER INSERT ON $login 
     //FOR EACH ROW BEGIN
@@ -166,10 +169,10 @@ document.write(day + '<font size=2>' + myweekday + '</font>' + month + year + ' 
 	
 	
 	
-	$pesq = @mysql_query("SELECT tituloPerfil FROM users WHERE tituloPerfil = '$perfil';", $conexao);
+	$pesq = @mysql_query("SELECT tituloPerfil FROM _users WHERE tituloPerfil = '".$perfil."';", $conexao);
 		$mostra = @mysql_num_rows($pesq);
 		if ( $mostra > 0 ) {
-		echo "<script>alert(\"Esse usuário já faz parte de sua rede!\");
+		echo "<script>alert(\"Esse usu&aacute;rio j&aacute; faz parte de sua rede!\");
 		window.location = 'javascript:history.back(-1)';
 		</script>";
 		}
@@ -182,7 +185,7 @@ document.write(day + '<font size=2>' + myweekday + '</font>' + month + year + ' 
   if($adiciona){
   echo"<script>alert('Contato ".str_replace("_"," ",$perfil).", adicionado com sucesso!'); history.go(-1);</script>";}
   else{
-  echo"<script>alert('Contato ".$perfil.", não pode ser adicionado!');  history.go(-1);</script>";}
+  echo"<script>alert('Contato ".$perfil.", nao pode ser adicionado!');  history.go(-1);</script>";}
 ?>
 </BODY>
 </HTML>

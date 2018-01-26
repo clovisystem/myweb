@@ -4,15 +4,17 @@
   <link rel="shortcut icon" href="MY_WEB-LOGO/favicon.ico" type="image/x-icon"/>
 </HEAD>
 <BODY>
-<?
+<?php
   include"based.php";
-  $perfil=isset($_POST['perfil'])?$_POST['perfil']:null;
+  $sessao=isset($_POST['sessao'])?$_POST['sessao']:null;
+  //$sessao=strtoupper($sessao);
+  //$sessao1=strtolower($sessao);
   $logado=isset($_POST['logado'])?$_POST['logado']:null;
   $login=isset($_GET['login'])?$_GET['login']:null;
+  $login=strtolower($login);
 
-
-  $elimina=@mysql_query("DELETE FROM $login WHERE contatos ='$_POST[perfil]';",$conexao);
-  $elimina.=@mysql_query("DELETE FROM $perfil WHERE contatos = '$login';",$conexao);
+  $elimina=@mysql_query("DELETE FROM $login WHERE contatos ='$sessao';",$conexao);
+  $elimina.=@mysql_query("DELETE FROM $sessao WHERE contatos = '$login';",$conexao);
 
 
 

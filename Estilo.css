@@ -39,14 +39,24 @@ body a:link{text-decoration:none;}
  #botaoCadastrar a:link{text-decoration:none; color:black;}
  #botaoCadastrar a:hover{text-decoration:none; color:yellow; cursor:hand}
  #esqueceuaSenha{background-image:url("././BOTOES/botaoCinzaGradiente/botaoCinzaGradiente.png"); background-repeat:no-repeat; width:120px; height:60px; 
- text-align:center; margin-left:600px;} 
+ text-align:center; margin-left:600px; padding-top:20px;} 
  #esqueceuaSenha a:visited{text-decoration:none; color:black;}
  #esqueceuaSenha a:link{text-decoration:none; color:black;}
  #esqueceuaSenha a:hover{text-decoration:none; color:yellow; cursor:hand}
 
  
- #faixa{background-image:url("././BACKGROUNDS/faixaMinor.png");background-repeat:no-repeat; width:1000px; height:120px; 
- text-align:center;  margin-left:0px; padding-top:30px; color:white; font-family:Tahoma, calibri, arial; text-transform:uppercase;}
+ #faixa{background-image:url("././BACKGROUNDS/faixaMinor.png");background-repeat:no-repeat;  width:100%; height:120px; 
+  text-align:center;   padding-top:30px; color:white; font-family:Tahoma, calibri, arial; text-transform:uppercase;}
+ 
+
+ #faixaEsq{background-image:url("BACKGROUNDS/faixaEsq.png");background-repeat:no-repeat;  width:5%; height:120px; 
+ text-align:center;   padding-top:30px; color:white; font-family:Tahoma, calibri, arial; text-transform:uppercase;}
+
+ #faixaMeio{background-image:url("BACKGROUNDS/faixaMeio.png");background-repeat:no-repeat;  width:90%; height:120px; 
+  text-align:center;   padding-top:30px; color:white; font-family:Tahoma, calibri, arial; text-transform:uppercase;}
+
+#faixaDir{background-image:url("BACKGROUNDS/faixaDir.png");background-repeat:no-repeat;  width:5%; height:120px; 
+    text-align:center;   padding-top:30px; color:white; font-family:Tahoma, calibri, arial; text-transform:uppercase;}
  
  #faixa a:visited{text-decoration:none; color:white;}
  #faixa a:link{text-decoration:none; color:white;}

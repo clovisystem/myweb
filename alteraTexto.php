@@ -43,7 +43,7 @@ else if(myday == 1)
 day = " <b><tt>Segunda,</tt></b> "
 
 else if(myday == 2)
-day = " <b><tt>Terça,</tt></b> "
+day = " <b><tt>Terï¿½a,</tt></b> "
 
 else if(myday == 3)
 day = " <b><tt>Quarta,</tt></b> "
@@ -55,7 +55,7 @@ else if(myday == 5)
 day = " <b><tt>Sexta,</tt></b> "
 
 else if(myday == 6)
-day = " <b><tt>Sábado,</tt></b> "
+day = " <b><tt>Sï¿½bado,</tt></b> "
 
 if(mymonth == 0)
 month = " <b><tt>de Janeiro de</tt></b> "
@@ -64,7 +64,7 @@ else if(mymonth ==1)
 month = "<b><tt> de Fevereiro de</tt></b> "
 
 else if(mymonth ==2)
-month = "<b><tt> de Março de</tt></b> "
+month = "<b><tt> de Marï¿½o de</tt></b> "
 
 else if(mymonth ==3)
 month = "<b><tt> de Abril de</tt></b> "
@@ -108,12 +108,19 @@ document.write(day + '<font size=2>' + myweekday + '</font>' + month + year + ' 
 
 <body>
 
-<div id="faixa">
+<div style="background-color:#CCCCCC; width:100%; height:88px; border-radius:12px; padding-top:8px;">
+<div id="faixaEsq" style="margin-left:1%; position:absolute; float:left; background-image:url('BACKGROUNDS/faixaEsq.png');background-repeat:no-repeat;  width:5%; height:120px; 
+ text-align:center;  background-size:100%  padding-top:30px; color:white; font-family:Tahoma, calibri, arial; text-transform:uppercase; "></div>
+<div id="faixaMeio" style="margin-left:3%;  position:absolute; float:left; background-image:url('BACKGROUNDS/faixaMeio.png');background-repeat:no-repeat;  background-size:100% 80px; width:90%; height:120px; 
+  text-align:center;   padding-top:30px; color:white; font-family:Tahoma, calibri, arial; text-transform:uppercase;">
 <a href="https://www.google.com.br/" target="_blank">Google</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="http://www.infojobs.com.br/" target="_blank">Infojobs</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="http://g1.globo.com/" target="_blank">G1</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="http://www.r7.com/" target="_blank">R7</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="https://www.youtube.com/" target="_blank">YouTube</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</div>
+<div id="faixaDir"  style="margin-left:93%;  position:absolute; float:left; background-image:url('BACKGROUNDS/faixaDir.png');background-repeat:no-repeat;  width:5%; height:120px; 
+    text-align:center;  background-size:100%  padding-top:30px; color:white; font-family:Tahoma, calibri, arial; text-transform:uppercase; "></div>
 </div>
 <!--		<div id="flashContent" align="center">
 			<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="1000" height="50" id="guias" align="center">
@@ -151,7 +158,8 @@ document.write(day + '<font size=2>' + myweekday + '</font>' + month + year + ' 
 <!--			</object>
 		</div>
 	</body>-->
-<p align="left"><img src="MY_WEB-LOGO/MyWeb.png" width="200" height="60" /></p>
+	<div style="background-color:white; border-radius:12px; width:100%; height:60px;"><p align="left"><img src="MY_WEB-LOGO/MyWeb.png" width="200" height="60" /></p></div>
+
     <br>
 
 <?php
@@ -249,7 +257,7 @@ Dia de anivers&aacute;rio:<select name="textoDia">
 M&ecirc;s:<select name="textoMes">
 <option value="01" Selected>Janeiro</option>
 <option value="02">Fevereiro</option>
-<option value="03">Março</option>
+<option value="03">Marï¿½o</option>
 <option value="04">Abril</option>
 <option value="05">Maio</option>
 <option value="06">Junho</option>

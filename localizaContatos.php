@@ -31,7 +31,7 @@ margin-bottom:8px;
 		
 		float:left; 
 		position:absolute;
-		margin-left:-55px;
+		margin-left:-35px;
 		margin-top:3px;
 		width:30px;
 		height:30px;
@@ -100,7 +100,7 @@ else if(myday == 1)
 day = " <b><tt>Segunda,</tt></b> "
 
 else if(myday == 2)
-day = " <b><tt>Terça,</tt></b> "
+day = " <b><tt>Ter&ccedil;a,</tt></b> "
 
 else if(myday == 3)
 day = " <b><tt>Quarta,</tt></b> "
@@ -112,7 +112,7 @@ else if(myday == 5)
 day = " <b><tt>Sexta,</tt></b> "
 
 else if(myday == 6)
-day = " <b><tt>Sábado,</tt></b> "
+day = " <b><tt>S&aacute;bado,</tt></b> "
 
 if(mymonth == 0)
 month = " <b><tt>de Janeiro de</tt></b> "
@@ -121,7 +121,7 @@ else if(mymonth ==1)
 month = "<b><tt> de Fevereiro de</tt></b> "
 
 else if(mymonth ==2)
-month = "<b><tt> de Março de</tt></b> "
+month = "<b><tt> de Mar&ccedil;o de</tt></b> "
 
 else if(mymonth ==3)
 month = "<b><tt> de Abril de</tt></b> "
@@ -152,7 +152,7 @@ month = "<b><tt> de Dezembro de </tt></b>"
 
 
 
-year='<b><tt>2017</tt></b> '
+year='<b><tt>2018</tt></b> '
 
 
 document.write(day + '<font size=2>' + myweekday + '</font>' + month + year + ' - ' + '<font size=2>' + timeValue + '</font>')
@@ -165,50 +165,23 @@ document.write(day + '<font size=2>' + myweekday + '</font>' + month + year + ' 
 
 <body>
 
-<div id="faixa" style="margin-left:60px;">
+<div style="background-color:#CCCCCC; width:100%; height:88px; border-radius:12px; padding-top:8px; margin-left:-5px;">
+<div id="faixaEsq" style="margin-left:1%; position:absolute; float:left; background-image:url('BACKGROUNDS/faixaEsq.png');background-repeat:no-repeat;  width:5%; height:120px; 
+ text-align:center;  background-size:100%  padding-top:30px; color:white; font-family:Tahoma, calibri, arial; text-transform:uppercase; "></div>
+<div id="faixaMeio" style="margin-left:3%;  position:absolute; float:left; background-image:url('BACKGROUNDS/faixaMeio.png');background-repeat:no-repeat;  background-size:100% 80px; width:90%; height:120px; 
+  text-align:center;   padding-top:30px; color:white; font-family:Tahoma, calibri, arial; text-transform:uppercase;">
 <a href="https://www.google.com.br/" target="_blank">Google</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="http://www.infojobs.com.br/" target="_blank">Infojobs</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="http://g1.globo.com/" target="_blank">G1</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="http://www.r7.com/" target="_blank">R7</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="https://www.youtube.com/" target="_blank">YouTube</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </div>
-<!--		<div id="flashContent" align="center">
-			<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="1000" height="50" id="guias" align="center">
-				<param name="movie" value="guias.swf" />
-				<param name="quality" value="high" />
-				<param name="bgcolor" value="#cccccc" />
-				<param name="play" value="true" />
-				<param name="loop" value="true" />
-				<param name="wmode" value="window" />
-				<param name="scale" value="showall" />
-				<param name="menu" value="true" />
-				<param name="devicefont" value="false" />
-				<param name="salign" value="" />
-				<param name="allowScriptAccess" value="sameDomain" />
-				<!--[if !IE]>-->
-<!--				<object type="application/x-shockwave-flash" data="guias.swf" width="1000" height="50">
-					<param name="movie" value="guias.swf" />
-					<param name="quality" value="high" />
-					<param name="bgcolor" value="#cccccc" />
-					<param name="play" value="true" />
-					<param name="loop" value="true" />
-					<param name="wmode" value="window" />
-					<param name="scale" value="showall" />
-					<param name="menu" value="true" />
-					<param name="devicefont" value="false" />
-					<param name="salign" value="" />
-					<param name="allowScriptAccess" value="sameDomain" />
-				<!--<![endif]-->
-<!--					<a href="http://www.adobe.com/go/getflash">
-						<img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" />
-					</a>
-				<!--[if !IE]>-->
-<!--				</object>
-				<!--<![endif]-->
-<!--			</object>
-		</div>
-	</body>-->
-<p align="left" style="margin-left:60px;><img src="MY_WEB-LOGO/MyWeb.png" width="200" height="60" /></p>
+<div id="faixaDir"  style="margin-left:93%;  position:absolute; float:left; background-image:url('BACKGROUNDS/faixaDir.png');background-repeat:no-repeat;  width:5%; height:120px; 
+    text-align:center;  background-size:100%  padding-top:30px; color:white; font-family:Tahoma, calibri, arial; text-transform:uppercase; "></div>
+</div>
+
+<div style="background-color:white; border-radius:12px; width:99%; height:60px; margin-left:15px;"><p align="left"><img src="MY_WEB-LOGO/MyWeb.png" width="200" height="60" /></p></div>
+
     <br>
 
 
@@ -221,7 +194,7 @@ document.write(day + '<font size=2>' + myweekday + '</font>' + month + year + ' 
 include "based.php";
 
 error_reporting(0);
-ini_set(“display_errors”, 0 );
+ini_set("display_errors", 0 );
 
  $login=$_GET["login"];
 
@@ -232,7 +205,7 @@ INFORME O NOME DO CONTATO:<br/>  <br/>
 
 <div id="divBusca">
 	<input type="search" name="contato" id="txtBusca" placeholder="Buscar..."/>
-	<button type="submit" id="btnBusca" name="pesquisar" value="Localizar" ></button><!--<img src="OBJETOS/search4.png" width="40" height="30" id="imgBusca" alt="Buscar"/>-->
+	<button type="submit" id="btnBusca" name="pesquisar" value="Localizar" style="margin-left:-36px;"></button><!--<img src="OBJETOS/search4.png" width="40" height="25" id="imgBusca" alt="Buscar"/>-->
 </div>
 
 
@@ -255,7 +228,7 @@ echo'<input type="hidden" name="logar" value="'.$logar;
 echo'"/>';
 
 
-$contat=@mysql_query("SELECT * FROM users;",$conexao);
+$contat=@mysql_query("SELECT * FROM _users;",$conexao);
 $contat=@mysql_fetch_array($contat);
 $contat=$contat["tituloPerfil"];
  $contatMinor=strtolower($contat);
@@ -263,7 +236,7 @@ $contat=$contat["tituloPerfil"];
  
 //$perfil=$_SESSION['c_email'];
 
- $exibeContato=@mysql_query("SELECT tituloPerfil,imagem FROM users  WHERE tituloPerfil <> '$login' ORDER BY codigo DESC  LIMIT 28 ;",$conexao);
+ $exibeContato=@mysql_query("SELECT tituloPerfil,imagem FROM _users  WHERE tituloPerfil <> '$login' ORDER BY codigo DESC  LIMIT 28 ;",$conexao);
  //$exibeFoto=@mysql_query("SELECT imagem FROM ".$perfil.";",$conexao);
  //$fetchImagem=@mysql_fetch_array($exibeFoto);
  
@@ -348,9 +321,9 @@ $contato=isset($_POST['contato'])?$_POST['contato']:null;
 $contato=str_replace(" ","_",$contato);
 //$contato1=$contato;
 //$contato1=str_replace("_"," ",$contato1);
-$sql=@mysql_query("SELECT users.tituloPerfil,users.cidade,".$contato.".imagem FROM users,".$contato." WHERE
-users.tituloPerfil LIKE '$contato%'
- AND users.tituloPerfil=".$contato.".contatos LIMIT 3 ;",$conexao);
+$sql=@mysql_query("SELECT _users.tituloPerfil,_users.cidade,".$contato.".imagem FROM _users,".$contato." WHERE
+_users.tituloPerfil LIKE '%$contato%'
+ AND _users.tituloPerfil=".$contato.".contatos LIMIT 3 ;",$conexao);
 While(list($tituloPerfil,$cidade,$imagem)=@mysql_fetch_array($sql))
 echo '<a href="localizaContatos2.php?login='.$_GET["login"].'&nome='.$tituloPerfil.'">
 <span id="localizaContato" class="select"   style="border:none; background:#CCCCCC; font-size:18px; color:blue; padding:8px 20px 6px 2px;margin-left:15px; font-weight:bold; width:600px;" value="'.str_replace("_"," ",$tituloPerfil).'"><img src="'.$imagem.'"
@@ -383,7 +356,7 @@ echo"<font face='tahoma' size='3' color='red'><b><br>Erro !!!</b></font><br>";
 echo"<input type='submit' value='Voltar' onclick='history.go(-1);'/>";}
 Else{
 
-     $senha=@mysql_query("SELECT senha FROM users WHERE senha LIKE'%$_POST[logar]%';",$conexao);
+     $senha=@mysql_query("SELECT senha FROM _users WHERE senha LIKE'%$_POST[logar]%';",$conexao);
      @session_start();
      $_SESSION['c_email']=$_POST['logar'];
      $_SESSION['c_senha']=$senha;
@@ -392,22 +365,22 @@ Else{
 
 echo'<body bgcolor="#CCCCCC" id="corpo">';
 echo'<table width="90%" bgcolor="#B5C0C3" id="body" align="center"><tr><td colspan="3">';
-echo '<input type="text" name="logon" value="'.$_POST['logar'].'" readonly="true" size="23" STYLE="background:#B5C0C3; border:none; font-size:18px; font-family:calibri,arial; color:green; font-weight:bold;"/>, esta é a Página do perfil de <input type="text" name="logon" value="'.strtoupper($localizado).'" readonly="true" size="16" STYLE="background:#B5C0C3; border:none; font-size:18px; font-family:calibri,arial; color:green; font-weight:bold;"/>';
+echo '<input type="text" name="logon" value="'.$_POST['logar'].'" readonly="true" size="23" STYLE="background:#B5C0C3; border:none; font-size:18px; font-family:calibri,arial; color:green; font-weight:bold;"/>, esta ï¿½ a Pï¿½gina do perfil de <input type="text" name="logon" value="'.strtoupper($localizado).'" readonly="true" size="16" STYLE="background:#B5C0C3; border:none; font-size:18px; font-family:calibri,arial; color:green; font-weight:bold;"/>';
 echo'</input>&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" value="Voltar" onclick="history.go(-2);" />';
 echo'</td></tr>';
 
 
-$listar0=@mysql_query("SELECT tituloPerfil FROM users WHERE tituloPerfil LIKE '%$_GET[nome]%' ;",$conexao);
-$listar1=@mysql_query("SELECT email FROM users WHERE tituloPerfil LIKE '%$_GET[nome]%';",$conexao);
-$listar2=@mysql_query("SELECT textoPerfil FROM users WHERE tituloPerfil LIKE '%$_GET[nome]%';",$conexao);
-$listar3=@mysql_query("SELECT atividades FROM users WHERE tituloPerfil LIKE '%$_GET[nome]%';",$conexao);
-$listar4=@mysql_query("SELECT hobby FROM users WHERE tituloPerfil LIKE '%$_GET[nome]%';",$conexao);
-$listar5=@mysql_query("SELECT objetivo FROM users WHERE tituloPerfil LIKE '%$_GET[nome]%';",$conexao);
-$listar6=@mysql_query("SELECT estado FROM users WHERE tituloPerfil LIKE '%$_GET[nome]%';",$conexao);
-$listar7=@mysql_query("SELECT cidade FROM users WHERE tituloPerfil LIKE '%$_GET[nome]%';",$conexao);
-$listar8=@mysql_query("SELECT arquivo FROM image WHERE foto LIKE '%$localizado%';",$conexao);
-$listar11=@mysql_query("SELECT dia FROM users WHERE tituloPerfil LIKE '%$sessao%';",$conexao);
-$listar12=@mysql_query("SELECT mes FROM users WHERE tituloPerfil LIKE '%$sessao%';",$conexao);
+$listar0=@mysql_query("SELECT tituloPerfil FROM _users WHERE tituloPerfil LIKE '%$_GET[nome]%' ;",$conexao);
+$listar1=@mysql_query("SELECT email FROM _users WHERE tituloPerfil LIKE '%$_GET[nome]%';",$conexao);
+$listar2=@mysql_query("SELECT textoPerfil FROM _users WHERE tituloPerfil LIKE '%$_GET[nome]%';",$conexao);
+$listar3=@mysql_query("SELECT atividades FROM _users WHERE tituloPerfil LIKE '%$_GET[nome]%';",$conexao);
+$listar4=@mysql_query("SELECT hobby FROM _users WHERE tituloPerfil LIKE '%$_GET[nome]%';",$conexao);
+$listar5=@mysql_query("SELECT status FROM _users WHERE tituloPerfil LIKE '%$_GET[nome]%';",$conexao);
+$listar6=@mysql_query("SELECT estado FROM _users WHERE tituloPerfil LIKE '%$_GET[nome]%';",$conexao);
+$listar7=@mysql_query("SELECT cidade FROM _users WHERE tituloPerfil LIKE '%$_GET[nome]%';",$conexao);
+$listar8=@mysql_query("SELECT arquivo FROM _image WHERE foto LIKE '%$localizado%';",$conexao);
+$listar11=@mysql_query("SELECT dia FROM _users WHERE tituloPerfil LIKE '%$sessao%';",$conexao);
+$listar12=@mysql_query("SELECT mes FROM _users WHERE tituloPerfil LIKE '%$sessao%';",$conexao);
 
 
 $perfil=@mysql_result($listar0,0,tituloPerfil);
@@ -434,7 +407,7 @@ echo'<tr><td width="15%" colspan="1" height="50" valign="bottom">Meus hobbies:&n
 id="hobbies" style="text-align:justify; margin:4px 0px 0px 7px;" ">' .@mysql_result($listar4,0,hobby);
 echo'</textarea></font></td></tr>';
 echo'<td width="15%" height="50" colspan="1" valign="bottom">Status:&nbsp;&nbsp;
-<font size="2" color="green" face="arial"> ' .@mysql_result($listar5,0,objetivo);
+<font size="2" color="green" face="arial"> ' .@mysql_result($listar5,0,status);
 echo'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></td></tr>';
 echo'<td width="15%" height="50" colspan="1" valign="bottom">Estado:&nbsp;&nbsp;
 <font size="2" color="green" face="arial" style="text-transform:uppercase;"> '

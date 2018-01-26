@@ -1,10 +1,13 @@
-
 <?php
 
 
+//$conexao=mysqli_connect("sql302.hyperphp.com","hp_18627480","9877xc","hp_18627480_usuario");
+//@mysql_select_db(hp_18627480_usuario',$conexao);
+//$consulta=mysqli_query($conexao,"SELECT * FROM _users");
+
 $conexao=mysqli_connect("localhost","root","","usuario");
-//@mysql_select_db('usuario',$conexao);
-$consulta=mysqli_query($conexao,"SELECT * FROM users");
+//@mysql_select_db(hp_18627480_usuario',$conexao);
+$consulta=mysqli_query($conexao,"SELECT * FROM _users");
 
 //$usuarios=@mysql_query("SELECT * FROM users WHERE codigo >0;",$conexao);
 //$j=@mysql_num_rows($usuarios);
@@ -27,9 +30,12 @@ $consulta=mysqli_query($conexao,"SELECT * FROM users");
 	 while($retorno=mysqli_fetch_object($consulta)){
 	 $usuarios=$retorno -> tituloPerfil;
      $arquivo = 'ListarPerfil.php';
+	 $arqMobile='mobile/mobilePerfil.php';
 	$destino = 'usuarios/'.$usuarios.'/index.php';
+	$destino1 = 'usuarios/'.$usuarios.'/mobilePerfil.php';
 	$move = copy($arquivo, $destino);
-	if($move){echo"movido";}else{echo"error";}
+	$move1= copy($arqMobile, $destino1);
+	if($move && $move1){echo"movido";}else{echo"error";}
 	}
 	  
 	//$resultado=@mysql_query("SELECT tituloPerfil FROM users ORDER BY  codigo DESC;",$conexao);

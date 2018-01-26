@@ -2,15 +2,19 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<style>
+<!--<style>
 #faixa{background-image:url("././BACKGROUNDS/faixaMinor.png");background-repeat:no-repeat; width:1000px; height:120px; 
  text-align:center;  margin-left:0px; padding-top:30px; color:white; font-family:Tahoma, calibri, arial; text-transform:uppercase;}
-</style>
+</style>-->
 <HEAD>
  <TITLE> - myWeb - </TITLE>
- <link type="text/css" rel="stylesheet" href="Estilo.css"/>
- <link type="text/css" rel="stylesheet" href="EstiloFonte.css"/>
- <link rel="shortcut icon" href="MY_WEB-LOGO/favicon.ico"" type="image/x-icon"/>
+ <meta name="viewport" content="width=200, initial-scale=1">
+ <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css"/>
+ <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script> 
+ <script src="jquery-1.6.2.min.js"></script> 
+ <!--<link type="text/css" rel="stylesheet" href="Estilo.css"/>
+ <link type="text/css" rel="stylesheet" href="EstiloFonte.css"/>-->
+ <link rel="shortcut icon" href="MY_WEB-LOGO/favicon.ico" type="image/x-icon"/>
  <!--<script language="javascript" src="query.js"></script>-->
 <?
 include "based.php";
@@ -18,7 +22,7 @@ include "based.php";
 <script language="javascript">
 function retirarAcento(objResp) {
 var varString = new String(objResp.value);
-var stringAcentos = new String('àâêôûãõáéíóúçüÀÂÊÔÛÃÕÁÉÍÓÚÇÜ');
+var stringAcentos = new String('ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½');
 var stringSemAcento = new String('aaeouaoaeioucuAAEOUAOAEIOUCU');
  
 var i = new Number();
@@ -39,8 +43,11 @@ objResp.value = varRes;
 }
 </script>
 </HEAD>
-<BODY bgcolor="#CCCCCC" id="corpo" align="center">
+<BODY style="background-image:url('BACKGROUNDS/layoutprinc.gif'); background-size:cover;background-repeat:no-repeat; background-attachment:fixed; height:100vh;"  >
+<div class="container container-fluid  ">
+<div class="row">
 
+<main class="container container-fluid col-xs-12 " > 
 <div align="right">
 <script  Type="text/JavaScript" language="JavaScript" >
 
@@ -70,7 +77,7 @@ else if(myday == 1)
 day = " <b><tt>Segunda,</tt></b> "
 
 else if(myday == 2)
-day = " <b><tt>Terça,</tt></b> "
+day = " <b><tt>Ter&ccedil;a,</tt></b> "
 
 else if(myday == 3)
 day = " <b><tt>Quarta,</tt></b> "
@@ -82,7 +89,7 @@ else if(myday == 5)
 day = " <b><tt>Sexta,</tt></b> "
 
 else if(myday == 6)
-day = " <b><tt>Sábado,</tt></b> "
+day = " <b><tt>S&aacute;bado,</tt></b> "
 
 if(mymonth == 0)
 month = " <b><tt>de Janeiro de</tt></b> "
@@ -91,7 +98,7 @@ else if(mymonth ==1)
 month = "<b><tt> de Fevereiro de</tt></b> "
 
 else if(mymonth ==2)
-month = "<b><tt> de Março de</tt></b> "
+month = "<b><tt> de Mar&ccedil;o de</tt></b> "
 
 else if(mymonth ==3)
 month = "<b><tt> de Abril de</tt></b> "
@@ -122,7 +129,7 @@ month = "<b><tt> de Dezembro de </tt></b>"
 
 
 
-year='<b><tt>2017</tt></b> '
+year='<b><tt>2018</tt></b> '
 
 
 document.write(day + '<font size=2>' + myweekday + '</font>' + month + year + ' - ' + '<font size=2>' + timeValue + '</font>')
@@ -133,18 +140,37 @@ document.write(day + '<font size=2>' + myweekday + '</font>' + month + year + ' 
 </div>
 <br/>
 
+<style>
+ a:visited{text-decoration:none; color:black;}
+ a:link{text-decoration:none; color:black;}
+ a:hover{text-decoration:none; color:yellow; cursor:hand}
+
+</style>
 
 
-<body>
+<body style="background-image:url('BACKGROUNDS/layoutprinc.gif'); background-size:cover;background-repeat:no-repeat; background-attachment:fixed; height:100vh;">
 
 
-<div id="faixa">
-<a href="https://www.google.com.br/" target="_blank">Google</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="http://www.infojobs.com.br/" target="_blank">Infojobs</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="http://g1.globo.com/" target="_blank">G1</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="http://www.r7.com/" target="_blank">R7</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://www.youtube.com/" target="_blank">YouTube</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<div style="background-color:#CCCCCC; width:100%; height:88px; border-radius:12px; padding-top:4px;"  >
+<!--<div class="container container-fluid col-xs-12 ">-->
+<!--<div class="container container-fluid col-xs-1 "  id="faixaEsq" style="margin-left:-10px; position:absolute; float:left; background-image:url('BACKGROUNDS/faixaEsq.png');background-repeat:no-repeat;  width:2%; height:120px; 
+ text-align:center;  background-size:100%  padding-top:30px; color:white; font-family:Tahoma, calibri, arial; text-transform:uppercase; "></div>
+-->
+<div class="container container-fluid col-xs-12 "  style="margin-left:-10px;  position:absolute; float:left;  width:96%; height:120px; 
+  text-align:center;   padding-top:30px; padding-left:-10px; color:white; font-family:Tahoma, calibri, arial; text-transform:uppercase;">
+<a href="https://www.google.com.br/" target="_blank" >Google</a>
+<a href="http://www.infojobs.com.br/" target="_blank" style="margin-left:20px;">Infojobs</a>
+<a href="http://g1.globo.com/" target="_blank" style="margin-left:20px;">G1</a>
+<a href="http://www.r7.com/" target="_blank" style="margin-left:20px;">R7</a>
+<a href="https://www.youtube.com/" target="_blank" style="margin-left:20px;">YouTube</a>
 </div>
+<!--<div class="container container-fluid col-xs-1 "  id="faixaDir"  style="margin-left:95.2%;  position:absolute; float:left; background-image:url('BACKGROUNDS/faixaDir.png');background-repeat:no-repeat;  width:2%; height:120px; 
+    text-align:center;  background-size:100%  padding-top:30px; color:white; font-family:Tahoma, calibri, arial; text-transform:uppercase; "></div>
+-->
+<!--</div>-->
+</div>
+</main>
+</div><!--row-->
  <!--     <div id="flashContent" align="center">
 			<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="1000" height="50" id="guias" align="center">
 				<param name="movie" value="guias.swf" />
@@ -170,27 +196,40 @@ document.write(day + '<font size=2>' + myweekday + '</font>' + month + year + ' 
 					<param name="menu" value="true" />
 					<param name="devicefont" value="false" />
 					<param name="salign" value="" />
-					<param name="allowScriptAccess" value="sameDomain" />
+					<param name="allowScriptAccess" value="sameDomain" />-->
 				<!--<![endif]-->
 <!--					<a href="http://www.adobe.com/go/getflash">
 						<img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" />
-					</a>
+					</a>-->
 				<!--[if !IE]>-->
-<!--				</object>
+<!--				</object>-->
 				<!--<![endif]-->
-			</object>
-		</div>
+			<!--</object>-->
+		<!--</div>>-->
 <!--	</body>-->
-<p align="left"><img src="MY_WEB-LOGO/MyWeb.png" width="200" height="60" /></p>
-    <br>
-    <br>
+<div class="row">
+<main  class="container container-fluid  col-xs-12 " >
+<br/>
+<br/>
+<?php
+ini_set("default_charset","UTF-8");
+?> 
+<div style="background-color:white; border-radius:12px; width:100%; height:60px;"><p align="left"><img src="MY_WEB-LOGO/MyWeb.png" width="200" height="60" /></p></div>
+<br/>
+<br/>
+</main>
+</div><!--row-->
 
+
+
+<div class="row">
+<main  class="container container-fluid  col-xs-12 " > 
 <div align="left"><h1>Cadastro de Usu&aacute;rios</h1><img src="BACKGROUNDS/Clov!System_2012_logo.png" width="120" height="60" align="right" id="body"/>
 <form method="post" enctype="multipart/form-data" name="IncluirUsuario" action="Incluir.php" >
 <font face="tahoma" size=1>
-Nome(T&iacute;tulo para o Perfil):<input type="text" name="tituloPerfil" value="" size="16" id="Estado" maxlength="48"  onchange="javascript:retirarAcento(this);"/>&nbsp;&nbsp;<span style="color:green;">
+Nome(T&iacute;tulo para o Perfil):<input type="text" name="tituloPerfil" value="" size="16" id="Estado" maxlength="48"  onchange="javascript:retirarAcento(this);" style="text-transform:uppercase;"/>&nbsp;&nbsp;<span style="color:green;">
 </span><br/>
-Sobrenome(T&iacute;tulo para o Perfil):<input type="text" name="tituloPerfil1" value="" size="35" id="Estado" maxlength="68" onchange="javascript:retirarAcento(this);"/>&nbsp;&nbsp;<span style="color:green;">
+Sobrenome(T&iacute;tulo para o Perfil):<input type="text" name="tituloPerfil1" value="" size="35" id="Estado" maxlength="68" onchange="javascript:retirarAcento(this);"  style="text-transform:uppercase;"/>&nbsp;&nbsp;<span style="color:green;">
 </span><br/>
 E-mail(Seu Login):<input type="text" name="c_email" value="" size="10" id="email"/>@
 <select name="dominio">
@@ -212,24 +251,9 @@ E-mail(Seu Login):<input type="text" name="c_email" value="" size="10" id="email
 <!--@myweb.is-great.net<br/>-->
 Senha:<input type="password" name="c_senha" id="c_senha" value="secret" size="20" onClick="javascript:this.value=''"/><br/>
 Redigite a senha:<input type="password" name="redigiteSenha" value="secret" size="20" onClick="javascript:this.value=''"/>  <br/>
-Estado:<input type="text" name="estado" id="estado" onClick="javascript:this.value=''" value=">>" size="4" maxlength="2" id="Estado"/> <br/>
-Cidade:<input type="text" name="cidade" value="" size="30" id="Proper"/>  
-<!--Religião:
-<select name="religiao">
-<option value="Assembléia de Deus" Selected>Assembléia de Deus</option>
-<option value="Batista">Batista</option>
-<option value="Igreja Católica">Igreja Católica</option>
-<option value="Congregação Cristã">Congregação Cristã</option>
-<option value="Metodista">Metodista</option>
-<option value="Presbiteriana">Presbiteriana</option>
-<option value="Bola de Neve">Bola de Neve</option>
-<option value="Congregacional">Congregacional</option>
-<option value="Nova Vida">Nova Vida</option>
-<option value="Cristo Vive">Cristo Vive</option>
-<option value="Mórmon">Mórmon</option>
-<option value="Maranata">Maranata</option>
-<option value="Outro">Outro</option>
-</select> -->                                      <br>
+Estado:<input type="text" name="estado" id="estado" onClick="javascript:this.value=''" value=">>" size="4" maxlength="2" id="Estado" style="text-transform:uppercase;"/> <br/>
+Cidade:<input type="text" name="cidade" value="" size="30" id="Proper"  style="text-transform:capitalize;"/>  
+<br/>
 Data de nascimento:<select name="dia">
 <option value="01" Selected>01</option>
 <option value="02">02</option>
@@ -266,7 +290,7 @@ Data de nascimento:<select name="dia">
 <select name="mes">
 <option value="01" Selected>Janeiro</option>
 <option value="02">Fevereiro</option>
-<option value="03">Março</option>
+<option value="03">Mar&ccedil;o</option>
 <option value="04">Abril</option>
 <option value="05">Maio</option>
 <option value="06">Junho</option>
@@ -366,34 +390,40 @@ Data de nascimento:<select name="dia">
 <option value="1961">1931</option>
 <option value="1960">1930</option>
 </select> <BR><br>
-<!--Versículo:<br>
-<textarea  name="versiculo"  cols="40" rows="6" scrolling="yes" maxlength="100">Se Deus é por nós, quem será contra nós?</textarea><br>
-Atividades:<br>-->
+
 Atividades:<br/>
-<textarea  name="atividades"  cols="40" rows="6" scrolling="yes" maxlength="100" onClick="javascript:this.value=''">O que você faz?</textarea><br>
+<textarea  name="atividades"  cols="40" rows="6" scrolling="yes" maxlength="100" onClick="javascript:this.value=''">O que voce faz?</textarea><br>
 Hobby:<br>
-<textarea name="hobby"  cols="40" rows="6" scrolling="yes" maxlength="100" onClick="javascript:this.value=''">De que você gosta?</textarea><br>
+<textarea name="hobby"  cols="40" rows="6" scrolling="yes" maxlength="100" onClick="javascript:this.value=''">De que voce gosta?</textarea><br>
 Texto do Perfil:<br>
 <textarea name="textoPerfil"  cols="40" rows="6"
-scrolling="yes" maxlength="1500" onClick="javascript:this.value=''">Digite aqui o que você quer exibir no seu perfil.</textarea><br>
+scrolling="yes" maxlength="1500" onClick="javascript:this.value=''">Digite aqui o que voce quer exibir no seu perfil.</textarea><br>
 Status:<select name="status">
 <option value="solteiro" Selected>Solteiro(a)</option>
 <option value="namorando">Namorando</option>
 <option value="casado(a)">Casado(a)</option>
-<option value="outro...">Outro...</option>
-</select> <BR>
+</select> 
+<BR/>
 </div>
+
+<main  class="container container-fluid  col-xs-4 " >  
 <div>
-<br/><br/><br/><br/><br/><br/><h5>Insira sua foto aqui !</h5>
-Foto :<input name="arquivo" type="file"   value="Escolher arquivo"/>
+<br/><br/><br/><br/><h5 style="float:left;">Insira sua foto aqui !</h5>
+<br/><br/><br/>
+<p style="float:left;">Foto :</p><input name="arquivo" type="file"   value="Escolher arquivo"/>
 <?php $tituloPerfil=isset($_POST['tituloPerfil'])?$_POST['tituloPerfil']:null; echo'<input name="nome" type="hidden" id="nome" value="'.$tituloPerfil.'"/>'; ?>
 </div>
+</main>
+
+
+
+<main  class="container container-fluid  col-xs-12 " > 
 <br/><br/>
 <span STYLE="width:50%; margin-left:130px;">
 <div align="center">
 
-    <input onmouseover=this.style.cursor="hand" name="cadastrar" value="Cadastre-se" type="submit" STYLE="border:0; height:18;
-    width:80; background:#999999;">
+    <input onmouseover=this.style.cursor="hand" name="cadastrar" value="Cadastre-se" type="submit" STYLE="border:0; height:48px;
+    width:180px; background:#999999; border-radius:8px; font-size:20px;">
     <BR>
     <BR>
 
@@ -401,6 +431,8 @@ Foto :<input name="arquivo" type="file"   value="Escolher arquivo"/>
 </div>
 </span>
 </form>
+</main>
+
 
 
 </BODY>

@@ -15,7 +15,7 @@
 
 
 
-  $eliminaFoto=@mysql_query("DELETE FROM image WHERE arquivo LIKE'%$perfil%';",$conexao);
+  $eliminaFoto=@mysql_query("DELETE FROM _image WHERE arquivo LIKE'%$perfil%';",$conexao);
 
 
 

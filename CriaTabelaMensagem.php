@@ -1,7 +1,7 @@
 <?php
+//$conexao=@mysqli_connect('localhost','root','','usuario');
 include"based.php";
-
-$mensagem=@mysql_query("CREATE TABLE mensagens(
+$mensagem=@mysql_query("CREATE TABLE _mensagens(
 id int(255) not null primary key auto_increment,
 comentario varchar(255),
 postar varchar(255),

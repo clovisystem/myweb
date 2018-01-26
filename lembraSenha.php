@@ -39,7 +39,7 @@ else if(myday == 1)
 day = ' <b><tt>Segunda,</tt></b> '
 
 else if(myday == 2)
-day = ' <b><tt>Terça,</tt></b> '
+day = ' <b><tt>Ter&ccedil;a,</tt></b> '
 
 else if(myday == 3)
 day = ' <b><tt>Quarta,</tt></b> '
@@ -51,7 +51,7 @@ else if(myday == 5)
 day = ' <b><tt>Sexta,</tt></b> '
 
 else if(myday == 6)
-day = ' <b><tt>Sábado,</tt></b> '
+day = ' <b><tt>S&aacute;bado,</tt></b> '
 
 if(mymonth == 0)
 month = ' <b><tt>de Janeiro de</tt></b> '
@@ -60,7 +60,7 @@ else if(mymonth ==1)
 month = '<b><tt> de Fevereiro de</tt></b> '
 
 else if(mymonth ==2)
-month = '<b><tt> de Março de</tt></b> '
+month = '<b><tt> de Mar&ccedil;o de</tt></b> '
 
 else if(mymonth ==3)
 month = '<b><tt> de Abril de</tt></b> '
@@ -91,7 +91,7 @@ month = '<b><tt> de Dezembro de </tt></b>'
 
 
 
-year='<b><tt>2017</tt></b> '
+year='<b><tt>2018</tt></b> '
 
 
 document.write(day + '<font size=2>' + myweekday + '</font>' + month + year + ' - ' + '<font size=2>' + timeValue + '</font>')
@@ -104,7 +104,8 @@ document.write(day + '<font size=2>' + myweekday + '</font>' + month + year + ' 
 
 <body bgcolor='#CCCCCC' id='corpo'>
 
-<p align="left"><img src="MY_WEB-LOGO/MyWeb.png" width="200" height="60" /></p>
+<div style="background-color:white; border-radius:12px; width:100%; height:60px;"><p align="left"><img src="MY_WEB-LOGO/MyWeb.png" width="200" height="60" /></p></div>
+
 <br/>
 <?php
 include"based.php";
@@ -115,7 +116,7 @@ $login = isset($_POST['login'])?$_POST['login']:null;
 
    //$login = $_POST['c_email'];
    //Verifica se existe usuario
-   $sql_busca = "SELECT * FROM users WHERE email = '$login'";
+   $sql_busca = "SELECT * FROM _users WHERE email = '$login'";
    $exe_busca = @mysql_query($sql_busca) or die (mysql_error());
    $fet_busca = @mysql_fetch_assoc($exe_busca);
    $num_busca = @mysql_num_rows($exe_busca);
@@ -128,30 +129,14 @@ $login = isset($_POST['login'])?$_POST['login']:null;
 	  echo"&nbsp;&nbsp;&nbsp;&nbsp;<button type='button' name='voltar' value='Voltar' onclick='history.go(-2)'>Voltar</button></div>";
 	  
 	  
-	  //$topico = "Esquece senha";
-	  //$mensagem = "<html>";
-	  //$mensagem .= "<body>";
-	  //$mensagem .= "<br>Você efetuou um pedido de recuperação de senha no webPost.</br>";
-	  //$mensagem .=	"<br>Login: $login";
-	  //$mensagem .=	"<br>Senha: $senha<br>";
-	  //$mensagem .= "<br>Site oficial do webPost";
-	  //$mensagem .=	"<br><a href='Logar.php'>webPost</a></br>";
-	  //$mensagem .=	"</body>";
-	  //$mensagem .=	"</html>";
-	  //$headers = "MIME-Version: 1.0\r\n";
-      //$headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
-	  //$headers .= "From: webPost <$email>\r\n";
-	  
-	  ////enviar para o email o login e a senha
-	  //mail($email, $topico, $mensagem, $headers);
-      //$ac[] = "Sua senha foi enviado para seu e-mail.";
+
    }
   else if((empty($login))){
   echo"<script> alert('Preencha o campo.');location.href='esqueceSenha.php';</script>";
   
   }
    else{
-   echo"Usuário n&atilde;o se encontra no nosso banco de dados";
+   echo"Usu&aacute;rio n&atilde;o se encontra no nosso banco de dados";
 	}
 
 ?>

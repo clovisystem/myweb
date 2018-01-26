@@ -101,7 +101,8 @@ document.write(day + '<font size=2>' + myweekday + '</font>' + month + year + ' 
 </script>
 <br/>
 
-<p align="left"><img src="MY_WEB-LOGO/MyWeb.png" width="200" height="60" /></p>
+<div style="background-color:white; border-radius:12px; width:100%; height:60px;"><p align="left"><img src="MY_WEB-LOGO/MyWeb.png" width="200" height="60" /></p></div>
+
     <br/>
     <br/>
 
@@ -132,7 +133,7 @@ include"based.php";
  case 12:$mes='Dezembro';break;
  }
  //$dia=$diaDaSemana.'/'.$mes.'/'.$ano;
-$intro=@mysql_query("INSERT INTO mensagens(comentario,postar,sessao,diaDaSemana,mes,ano) VALUES('$comentario','$postar','$sessao','$diaDaSemana','$mes','$ano');"
+$intro=@mysql_query("INSERT INTO _mensagens(comentario,postar,sessao,diaDaSemana,mes,ano) VALUES('$comentario','$postar','$sessao','$diaDaSemana','$mes','$ano');"
 ,$conexao);
 
 

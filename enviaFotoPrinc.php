@@ -42,7 +42,7 @@ else if(myday == 1)
 day = " <b><tt>Segunda,</tt></b> "
 
 else if(myday == 2)
-day = " <b><tt>Terça,</tt></b> "
+day = " <b><tt>Terï¿½a,</tt></b> "
 
 else if(myday == 3)
 day = " <b><tt>Quarta,</tt></b> "
@@ -54,7 +54,7 @@ else if(myday == 5)
 day = " <b><tt>Sexta,</tt></b> "
 
 else if(myday == 6)
-day = " <b><tt>Sábado,</tt></b> "
+day = " <b><tt>Sï¿½bado,</tt></b> "
 
 if(mymonth == 0)
 month = " <b><tt>de Janeiro de</tt></b> "
@@ -63,7 +63,7 @@ else if(mymonth ==1)
 month = "<b><tt> de Fevereiro de</tt></b> "
 
 else if(mymonth ==2)
-month = "<b><tt> de Março de</tt></b> "
+month = "<b><tt> de Marï¿½o de</tt></b> "
 
 else if(mymonth ==3)
 month = "<b><tt> de Abril de</tt></b> "
@@ -101,7 +101,8 @@ document.write(day + '<font size=2>' + myweekday + '</font>' + month + year + ' 
 </script>
 <BODY>
 <br/><br/>
-<p align="left"><img src="MY_WEB-LOGO/MyWeb.png" width="200" height="60" /></p>
+<div style="background-color:white; border-radius:12px; width:100%; height:60px;"><p align="left"><img src="MY_WEB-LOGO/MyWeb.png" width="200" height="60" /></p></div>
+
 <br/><br/>
 <?php
   include"based.php";
@@ -139,10 +140,10 @@ $tituloPerfil=$_POST['tituloPerfil'];
 
 
 
-$query = "INSERT INTO users (arquivo) VALUES ('$arquivo_nome') WHERE tituloPerfil LIKE'%$_GET[id]%'"; // inserção sql na tabela recados
+$query = "INSERT INTO users (arquivo) VALUES ('$arquivo_nome') WHERE tituloPerfil LIKE'%$_GET[id]%'"; // inserï¿½ï¿½o sql na tabela recados
 
 mysql_query($query) or die (mysql_error());
-mysql_close();//fecha conexão
+mysql_close();//fecha conexï¿½o
 
 ?>
 <?php

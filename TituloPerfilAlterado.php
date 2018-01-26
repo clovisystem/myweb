@@ -9,7 +9,7 @@
 include"based.php";
 
 if((empty($_POST['NovoPerfil']))||(empty($_POST['NovoPerfilSobrenome']))){
-echo"<script>alert('Você deixou um campo em branco!'); history.go(-1);</script>";
+echo"<script>alert('Voce deixou um campo em branco!'); history.go(-1);</script>";
 }
 
 //$mudar=isset($_POST['mudar'])?$_POST['mudar']:null;
@@ -38,12 +38,12 @@ $PerfilMaiusc=strtoupper($Perfil);
 
 $alteraTabela=@mysql_query("RENAME TABLE $Perfil To $novoPerfilCompleto;", $conexao);
 $alteraContato=@mysql_query("UPDATE $novoPerfilCompleto SET contatos='$novoPerfilCompleto' WHERE codigo=1;",$conexao);	
-$alteraNome=@mysql_query("UPDATE users SET tituloPerfil='$novoPerfilCompletoMaiusc' WHERE tituloPerfil ='".strtoupper($Perfil)."';",$conexao);		
+$alteraNome=@mysql_query("UPDATE _users SET tituloPerfil='$novoPerfilCompletoMaiusc' WHERE tituloPerfil ='".strtoupper($Perfil)."';",$conexao);		
   
   if($alteraTabela){
   echo"<script>alert('Contato ".str_replace("_"," ",$novoPerfilCompleto).", atualizado com sucesso!'); history.go(-2);</script>";}
   else{
-  echo"<script>alert('Contato ".str_replace("_"," ",$novoPerfilCompleto).", não pode ser atualizado!');  history.go(-2);</script>";}
+  echo"<script>alert('Contato ".str_replace("_"," ",$novoPerfilCompleto).", nao pode ser atualizado!');  history.go(-2);</script>";}
   
   
   

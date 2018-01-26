@@ -42,7 +42,7 @@ else if(myday == 1)
 day = " <b><tt>Segunda,</tt></b> "
 
 else if(myday == 2)
-day = " <b><tt>Terça,</tt></b> "
+day = " <b><tt>Ter&ccedil;a,</tt></b> "
 
 else if(myday == 3)
 day = " <b><tt>Quarta,</tt></b> "
@@ -54,7 +54,7 @@ else if(myday == 5)
 day = " <b><tt>Sexta,</tt></b> "
 
 else if(myday == 6)
-day = " <b><tt>Sábado,</tt></b> "
+day = " <b><tt>S&aacute;bado,</tt></b> "
 
 if(mymonth == 0)
 month = " <b><tt>de Janeiro de</tt></b> "
@@ -63,7 +63,7 @@ else if(mymonth ==1)
 month = "<b><tt> de Fevereiro de</tt></b> "
 
 else if(mymonth ==2)
-month = "<b><tt> de Março de</tt></b> "
+month = "<b><tt> de Mar&ccedil;o de</tt></b> "
 
 else if(mymonth ==3)
 month = "<b><tt> de Abril de</tt></b> "
@@ -94,7 +94,7 @@ month = "<b><tt> de Dezembro de </tt></b>"
 
 
 
-year='<b><tt>2016</tt></b> '
+year='<b><tt>2018</tt></b> '
 
 
 document.write(day + '<font size=2>' + myweekday + '</font>' + month + year + ' - ' + '<font size=2>' + timeValue + '</font>')
@@ -105,7 +105,8 @@ document.write(day + '<font size=2>' + myweekday + '</font>' + month + year + ' 
 </div>
 <br/>
 
-<p align="left"><img src="MY_WEB-LOGO/MyWeb.png" width="200" height="60" /></p>
+<div style="background-color:white; border-radius:12px; width:100%; height:60px;"><p align="left"><img src="MY_WEB-LOGO/MyWeb.png" width="200" height="60" /></p></div>
+
     <br>
     <br>
 <?
@@ -119,7 +120,7 @@ $comentario=$_POST['comentario'];
 $sessao=$_POST['sessao'];
 $sessao=str_replace(" ","_",$sessao);
 
-$exclusao=@mysql_query("DELETE FROM mensagens WHERE comentario='$comentario' AND sessao='$sessao' ;",$conexao);
+$exclusao=@mysql_query("DELETE FROM _mensagens WHERE comentario='$comentario' AND sessao='$sessao' ;",$conexao);
 if($exclusao){
 echo'<center>Mensagem Exclu&iacute;da com sucesso!';
 echo '<br/><a href="javascript:window.history.go(-1)">Clique aqui para voltar.</a><center>';

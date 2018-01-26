@@ -106,10 +106,10 @@ month = "<b><tt> de Dezembro de </tt></b>"
 
 
 
-year="<b><tt>2010</tt></b> "
+year="<b><tt>2018</tt></b> "
 
 
-document.write(day + myweekday + month + "2013" + " - " + timeValue)
+document.write(day + myweekday + month + "2018" + " - " + timeValue)
 
 
 

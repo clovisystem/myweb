@@ -31,7 +31,7 @@ speed:1000
  text-align:center;  margin-left:0px; padding-top:30px; color:white; font-family:Tahoma, calibri, arial; text-transform:uppercase;}
 </style>
 </HEAD>
-<BODY bgcolor="#CCCCCC" id="corpo" align="center">
+<BODY bgcolor="#CCCCCC" id="corpo" align="left">
 
 <div align="right">
 <script  Type="text/JavaScript" language="JavaScript" >
@@ -126,12 +126,19 @@ document.write(day + '<font size=2>' + myweekday + '</font>' + month + year + ' 
 <body>
 
 
-<div id="faixa" style="margin-left:60px;">
+<div style="background-color:#CCCCCC; width:100%; height:88px; border-radius:12px; padding-top:8px;">
+<div id="faixaEsq" style="margin-left:1%; position:absolute; float:left; background-image:url('BACKGROUNDS/faixaEsq.png');background-repeat:no-repeat;  width:5%; height:120px; 
+ text-align:center;  background-size:100%  padding-top:30px; color:white; font-family:Tahoma, calibri, arial; text-transform:uppercase; "></div>
+<div id="faixaMeio" style="margin-left:3%;  position:absolute; float:left; background-image:url('BACKGROUNDS/faixaMeio.png');background-repeat:no-repeat;  background-size:100% 80px; width:90%; height:120px; 
+  text-align:center;   padding-top:30px; color:white; font-family:Tahoma, calibri, arial; text-transform:uppercase;">
 <a href="https://www.google.com.br/" target="_blank">Google</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="http://www.infojobs.com.br/" target="_blank">Infojobs</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="http://g1.globo.com/" target="_blank">G1</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="http://www.r7.com/" target="_blank">R7</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="https://www.youtube.com/" target="_blank">YouTube</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</div>
+<div id="faixaDir"  style="margin-left:93%;  position:absolute; float:left; background-image:url('BACKGROUNDS/faixaDir.png');background-repeat:no-repeat;  width:5%; height:120px; 
+    text-align:center;  background-size:100%  padding-top:30px; color:white; font-family:Tahoma, calibri, arial; text-transform:uppercase; "></div>
 </div>
 <!--		<div id="flashContent" align="center">
 			<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="1000" height="50" id="guias" align="center">
@@ -169,7 +176,8 @@ document.write(day + '<font size=2>' + myweekday + '</font>' + month + year + ' 
 <!--			</object>
 		</div>
 	</body>-->
-<p align="left" style="margin-left:60px;"><img src="MY_WEB-LOGO/MyWeb.png" width="200" height="60" /></p>
+	<div style="background-color:white; border-radius:12px; width:99%; height:60px; margin-left:15px;"><p align="left"><img src="MY_WEB-LOGO/MyWeb.png" width="200" height="60" /></p></div>
+
     <br>
 
 
@@ -187,7 +195,7 @@ $login=$_GET['login'];
 
 
 
-$cor=@mysql_query("SELECT coalesce(background,'#B5C0C3') as background FROM users WHERE tituloPerfil LIKE '%$sessaoMaior%';",$conexao); 
+$cor=@mysql_query("SELECT coalesce(background,'#B5C0C3') as background FROM _users WHERE tituloPerfil LIKE '%$sessaoMaior%';",$conexao); 
 //$cor=@msql_query($cor)or die(@mysql_error());
 $cor=@mysql_fetch_array($cor);
 $cor=$cor["background"];
@@ -203,17 +211,17 @@ echo'</input>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&
 echo'</td></tr>';
 
 
-$listar0=@mysql_query("SELECT tituloPerfil FROM users WHERE tituloPerfil LIKE '%$sessao%' ;",$conexao);
-$listar1=@mysql_query("SELECT email FROM users WHERE tituloPerfil LIKE '%$sessao%';",$conexao);
-$listar2=@mysql_query("SELECT textoPerfil FROM users WHERE tituloPerfil LIKE '%$sessao%';",$conexao);
-$listar3=@mysql_query("SELECT atividades FROM users WHERE tituloPerfil LIKE '%$sessao%';",$conexao);
-$listar4=@mysql_query("SELECT hobby FROM users WHERE tituloPerfil LIKE '%$sessao%';",$conexao);
-$listar5=@mysql_query("SELECT objetivo FROM users WHERE tituloPerfil LIKE '%$sessao%';",$conexao);
-$listar6=@mysql_query("SELECT estado FROM users WHERE tituloPerfil LIKE '%$sessao%';",$conexao);
-$listar7=@mysql_query("SELECT cidade FROM users WHERE tituloPerfil LIKE '%$sessao%';",$conexao);
-$listar8=@mysql_query("SELECT arquivo FROM image WHERE foto LIKE '%$sessao%';",$conexao);
-$listar11=@mysql_query("SELECT dia FROM users WHERE tituloPerfil LIKE '%$sessao%';",$conexao);
-$listar12=@mysql_query("SELECT mes FROM users WHERE tituloPerfil LIKE '%$sessao%';",$conexao);
+$listar0=@mysql_query("SELECT tituloPerfil FROM _users WHERE tituloPerfil LIKE '%$sessao%' ;",$conexao);
+$listar1=@mysql_query("SELECT email FROM _users WHERE tituloPerfil LIKE '%$sessao%';",$conexao);
+$listar2=@mysql_query("SELECT textoPerfil FROM _users WHERE tituloPerfil LIKE '%$sessao%';",$conexao);
+$listar3=@mysql_query("SELECT atividades FROM _users WHERE tituloPerfil LIKE '%$sessao%';",$conexao);
+$listar4=@mysql_query("SELECT hobby FROM _users WHERE tituloPerfil LIKE '%$sessao%';",$conexao);
+$listar5=@mysql_query("SELECT status FROM _users WHERE tituloPerfil LIKE '%$sessao%';",$conexao);
+$listar6=@mysql_query("SELECT estado FROM _users WHERE tituloPerfil LIKE '%$sessao%';",$conexao);
+$listar7=@mysql_query("SELECT cidade FROM _users WHERE tituloPerfil LIKE '%$sessao%';",$conexao);
+$listar8=@mysql_query("SELECT arquivo FROM _image WHERE foto LIKE '%$sessao%';",$conexao);
+$listar11=@mysql_query("SELECT dia FROM _users WHERE tituloPerfil LIKE '%$sessao%';",$conexao);
+$listar12=@mysql_query("SELECT mes FROM _users WHERE tituloPerfil LIKE '%$sessao%';",$conexao);
 
 
 $perfil1=@mysql_result($listar0,0,tituloPerfil);
@@ -247,7 +255,7 @@ id="hobbies" style="text-align:justify; margin:4px 0px 0px 7px; background-color
 echo'</textarea></font></td></tr>';
 echo'<td width="15%" height="50" colspan="1" align="left" valign="bottom"><div id="campo" style="background-image:url(BACKGROUNDS/CampoMyWeb.png);
 background-repeat:no-repeat;height:80px;padding-top:20px;padding-left:10px; background-color:transparent;">Status:&nbsp;&nbsp;
-<font size="2" color="green" face="arial" style="font-weight:600;"> ' .@mysql_result($listar5,0,objetivo);
+<font size="2" color="green" face="arial" style="font-weight:600;"> ' .@mysql_result($listar5,0,status);
 echo'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></div></td></tr>';
 echo'<td width="15%" height="50" colspan="1" align="left" valign="bottom"><div id="campo" style="background-image:url(BACKGROUNDS/CampoMyWeb.png);
 background-repeat:no-repeat;height:80px;padding-top:20px;padding-left:10px; background-color:transparent;">Estado:&nbsp;&nbsp;
@@ -303,7 +311,7 @@ echo'<span style="float:left; position:relative; padding:4px 8px 8px 4px;margin-
 
 echo'&nbsp;&nbsp;&nbsp;&nbsp;';
 
-$sql = "SELECT arquivo FROM image WHERE tituloPerfil ='$sessao'  ";
+$sql = "SELECT arquivo FROM _image WHERE tituloPerfil ='$sessao'  ";
 $limite = @mysql_query("$sql");
 
 while($sql = @mysql_fetch_array ($limite) ) {
@@ -332,7 +340,7 @@ echo'<table width="90%" bgcolor="'.$cor.'" id="body" align="center"><tr>
 
 <div id="formulario2">
 <form name="elimina" method="post" action="elimina.php?login='.$login.'">
-<input type="hidden" name="perfil" value="'.$perfil.'"/>
+<input type="hidden" name="sessao" value="'.$sessao.'"/>
 <input type="submit" name="remove" value="Eliminar contato"/>
 </form>
 </div>

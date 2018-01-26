@@ -1,7 +1,8 @@
 
 <?php
-  include "based.php";
-  $user=@mysql_query("CREATE TABLE users(
+include"based.php";
+//$conexao=@mysqli_connect('localhost','root','','usuario');
+  $user=@mysql_query("CREATE TABLE _users(
   codigo int(255) not null primary key auto_increment,
   tituloPerfil varchar(60),
   email varchar(60),

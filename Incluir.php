@@ -1,7 +1,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-
+<meta name="viewport" content="width=200, initial-scale=1">
+ <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css"/>
+ <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script> 
+ <script src="jquery-1.6.2.min.js"></script> 
 <HEAD>
 <TITLE> - myWeb - </TITLE>
 <?
@@ -9,14 +12,27 @@ include "based.php";
 
 ?>
 
- <link type="text/css" rel="stylesheet" href="Estilo.css"/>
+ <!--<link type="text/css" rel="stylesheet" href="Estilo.css"/>-->
  <link rel="shortcut icon" href="MY_WEB-LOGO/favicon.ico" type="image/x-icon"/>
  <style>
 #faixa{background-image:url("././BACKGROUNDS/faixaMinor.png");background-repeat:no-repeat; width:1000px; height:120px; 
  text-align:center;  margin-left:0px; padding-top:30px; color:white; font-family:Tahoma, calibri, arial; text-transform:uppercase;}
 </style>
 </HEAD>
-<BODY bgcolor="#CCCCCC" id="corpo">
+<BODY style="background-image:url('BACKGROUNDS/layoutprinc.gif'); background-size:cover;background-repeat:no-repeat; background-attachment:fixed; height:100vh;"  >>
+
+<div class="container container-fluid  ">
+<div class="row">
+
+<main class="container container-fluid col-xs-12 " > 
+
+<div id="google_translate_element"></div><script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'pt', layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL}, 'google_translate_element');
+}
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
 <div align="right">
 <script  Type="text/JavaScript" language="JavaScript" >
 
@@ -109,18 +125,44 @@ document.write(day + '<font size=2>' + myweekday + '</font>' + month + year + ' 
 </div>
 <br/>
 
-<div id='faixa'>
-<a href='https://www.google.com.br/' target='_blank'>Google</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href='http://www.infojobs.com.br/' target='_blank'>Infojobs</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href='http://g1.globo.com/' target='_blank'>G1</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href='http://www.r7.com/' target='_blank'>R7</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href='https://www.youtube.com/' target='_blank'>YouTube</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<div style="background-color:#CCCCCC; width:100%; height:88px; border-radius:12px; padding-top:4px;"  >
+<!--<div class="container container-fluid col-xs-12 ">-->
+<!--<div class="container container-fluid col-xs-1 "  id="faixaEsq" style="margin-left:-10px; position:absolute; float:left; background-image:url('BACKGROUNDS/faixaEsq.png');background-repeat:no-repeat;  width:2%; height:120px; 
+ text-align:center;  background-size:100%  padding-top:30px; color:white; font-family:Tahoma, calibri, arial; text-transform:uppercase; "></div>
+-->
+<div class="container container-fluid col-xs-12 "  id="faixaMeio" style="margin-left:-10px;  position:absolute; float:left;  width:96%; height:120px; 
+  text-align:center;   padding-top:30px; padding-left:-10px; color:white; font-family:Tahoma, calibri, arial; text-transform:uppercase;">
+<a href="https://www.google.com.br/" target="_blank" >Google</a>
+<a href="http://www.infojobs.com.br/" target="_blank" style="margin-left:20px;">Infojobs</a>
+<a href="http://g1.globo.com/" target="_blank" style="margin-left:20px;">G1</a>
+<a href="http://www.r7.com/" target="_blank" style="margin-left:20px;">R7</a>
+<a href="https://www.youtube.com/" target="_blank" style="margin-left:20px;">YouTube</a>
 </div>
+<!--<div class="container container-fluid col-xs-1 "  id="faixaDir"  style="margin-left:95.2%;  position:absolute; float:left; background-image:url('BACKGROUNDS/faixaDir.png');background-repeat:no-repeat;  width:2%; height:120px; 
+    text-align:center;  background-size:100%  padding-top:30px; color:white; font-family:Tahoma, calibri, arial; text-transform:uppercase; "></div>
+-->
+<!--</div>-->
+</div>
+</main>
+</div><!--row-->
 
-<p align="left"><img src="MY_WEB-LOGO/MyWeb.png" width="200" height="60" /></p>
-    <br>
-    <br>
+<div class="row">
+<main  class="container container-fluid  col-xs-12 " >
+<br/>
+<br/>
 
+<div style="background-color:white; border-radius:12px; width:100%; height:60px;"><p align="left"><img src="MY_WEB-LOGO/MyWeb.png" width="200" height="60" /></p></div>
+
+    <br/>
+    <br/>
+</main>
+</div><!--row-->
+
+
+
+
+<div class="row">
+<main  class="container container-fluid  col-xs-12 " >
 <?php
 include "based.php";
   //@session_start();
@@ -128,7 +170,9 @@ include "based.php";
       $_SESSION['c_senha']; */
 
 
-
+$email=isset($_POST['c_email'])?$_POST['c_email']:null;
+$dominio=isset($_POST['dominio'])?$_POST['dominio']:null;
+$senha=isset($_POST['c_senha'])?$_POST['c_senha']:null;
 $tituloPerfil=isset($_POST['tituloPerfil'])?$_POST['tituloPerfil']:null;
 $tituloPerfil=str_replace(" ","_",$tituloPerfil);
 //$tituloPerfil=preg_replace('/[^[:alpha:]_]/', '',$tituloPerfil);
@@ -138,10 +182,10 @@ $tituloPerfil1=str_replace(" ","_",$tituloPerfil1);
 $senhaDigitada=isset($_POST['c_senha'])?$_POST['c_senha']:null;
 //$senhaDigitada=preg_replace('/[^[:alnum:]_]/', '',$senhaDigitada);
 $senhaConfirmada=isset($_POST['redigiteSenha'])?$_POST['redigiteSenha']:null;
-$email=$_POST['c_email']."@".$_POST['dominio'];
+$email=$email."@".$dominio;
 //$email=preg_replace('/[^[:alpha:]_]/', '',$email);
 
-$pesq = @mysql_query("SELECT email FROM users WHERE email = '$email';", $conexao);
+$pesq = @mysql_query("SELECT email FROM _users WHERE email = '$email';", $conexao);
 		$mostra = @mysql_num_rows($pesq);
 		if ( $mostra > 0 ) {
 		echo "<script>alert(\"O nick que voce digitou ja existe em nosso bando de dados, tente outro.\");
@@ -149,7 +193,7 @@ $pesq = @mysql_query("SELECT email FROM users WHERE email = '$email';", $conexao
 		</script>";
 		}
 
-if($senhaDigitada!=$senhaConfirmada or ($_POST['c_senha'] == "" || $_POST['redigiteSenha'] == "" || $_POST['c_email'] 
+if($senhaDigitada!=$senhaConfirmada or ($senhaDigitada == "" || $_POST['redigiteSenha'] == "" || $_POST['c_email'] 
 == ""|| $_POST['tituloPerfil'] == ""|| $_POST['tituloPerfil1'] == ""|| $_POST['estado'] == ""|| $_POST['cidade'] == ""))
 {echo '<body bgcolor="#CCCCCC"><BR><BR><font color="red"><b>'.$tituloPerfil.$tituloPerfil1.' ,nao pode ser cadastrado,
  reveja a sua senha ou se algum campo nao foi preenchido.</b></font></body>';
@@ -193,66 +237,107 @@ $incluiUsuario=str_replace("Õ","O",$incluiUsuario);
 $incluiUsuario=str_replace("Ú","U",$incluiUsuario);
 $incluiUsuario=str_replace("Ù","U",$incluiUsuario);
 $incluiUsuario=str_replace("Û","U",$incluiUsuario);
+$incluiUsuario=str_replace("Ç","C",$incluiUsuario);
+
+
+$incluiUsuario=str_replace("á","a",$incluiUsuario);
+$incluiUsuario=str_replace("à","a",$incluiUsuario);
+$incluiUsuario=str_replace("ã","a",$incluiUsuario);
+$incluiUsuario=str_replace("â","a",$incluiUsuario);
+$incluiUsuario=str_replace("é","e",$incluiUsuario);
+$incluiUsuario=str_replace("è","e",$incluiUsuario);
+$incluiUsuario=str_replace("ê","e",$incluiUsuario);
+$incluiUsuario=str_replace("í","i",$incluiUsuario);
+$incluiUsuario=str_replace("ì","i",$incluiUsuario);
+$incluiUsuario=str_replace("î","i",$incluiUsuario);
+$incluiUsuario=str_replace("ó","o",$incluiUsuario);
+$incluiUsuario=str_replace("ò","o",$incluiUsuario);
+$incluiUsuario=str_replace("ô","o",$incluiUsuario);
+$incluiUsuario=str_replace("õ","o",$incluiUsuario);
+$incluiUsuario=str_replace("ú","u",$incluiUsuario);
+$incluiUsuario=str_replace("ù","u",$incluiUsuario);
+$incluiUsuario=str_replace("û","u",$incluiUsuario);
+$incluiUsuario=str_replace("ç","c",$incluiUsuario);
 
 
 //$incluiUsuario=strtolower($incluiUsuario);
-$email=$_POST['c_email']."@".$_POST['dominio'];
+
 if($mostra<1){
-$resultado=@mysql_query("Insert into users (tituloPerfil,email,senha,estado,cidade,dia,mes,ano,atividades,
+$resultado=@mysql_query("Insert into _users (tituloPerfil,email,senha,estado,cidade,dia,mes,ano,atividades,
 hobby,textoPerfil,status,imagem,background)
-VALUES('".tirarAcentos(str_replace(" ","_",$incluiUsuario))."','$email','$_POST[c_senha]',
+VALUES('".strtoupper(str_replace(" ","_",$incluiUsuario))."','$email','$senhaDigitada',
 '$_POST[estado]','$_POST[cidade]',
 '$_POST[dia]','$_POST[mes]','$_POST[ano]','$_POST[atividades]','$_POST[hobby]',
 '$_POST[textoPerfil]','$_POST[status]','null','#B5C0C3');",$conexao);
-//$arquivo1 = $_FILES["arquivo"];
-//$pasta_dir1 = "arquivos/";
-//$arquivoNome=$pasta_dir1.$arquivo1["name"];
-//move_uploaded_file($arquivo1["tmp_name"], $arquivoNome);
-//$resultado1="Insert into users (imagem) VALUES('".$arquivoNome."')";
-//$inserir1=@mysql_query($resultado1) or die (mysql_error());
-//@mysql_close();
 
 
 
 
 
-#$emailEnviado=isset($_POST['c_email'])?$_POST['c_email']:null;
-#$linha=@mysql_num_rows($resultado[c_email].'@websystem.hostzi.com');
-#$emailCadastrado = $linha;
-
-
-
-
-#if($emailEnviado == $linha){
-#echo "<script>window.alert(\"O nick que voce digitou ja existe em nosso bando de dados, tente outro.\");
-#       window.location = 'javascript:history.back(-1)';
-#        </script>";}
-// como geral gosta de separa
-
-
-
-
-$acesso=$tituloPerfil." ".$tituloPerfil1;
+$incluiUsuario=$tituloPerfil." ".$tituloPerfil1;
 error_reporting(0);
 ini_set("display_errors",0);
-echo '<body bgcolor="#CCCCCC"><BR><BR><form method="post" action="index.php"><font color="green"><b>'.str_replace("_"," ",$acesso).',cadastrado(a) com sucesso! </b></font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+echo '<body bgcolor="#CCCCCC"><BR><BR><form method="post" action="index.php"><font color="green"><b>'.str_replace("_"," ",$incluiUsuario).',cadastrado(a) com sucesso! </b></font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
 echo '<input onmouseover=this.style.cursor="hand" name="acessar" value="Acesse sua Conta" type="submit" 
 STYLE="border:0; height:18px;
 width:200px; background:#999999;"/ ></form>';
 echo'</body>';
 $TabelaPerfil=$tituloPerfil.'_'.$tituloPerfil1;
 $TabelaPerfil=str_replace("ç","c",$TabelaPerfil);
-$TabelaPerfil=tirarAcentos($TabelaPerfil);
+//$TabelaPerfil=tirarAcentos($TabelaPerfil);
 $TabelaPerfil=strtolower($TabelaPerfil);
+
+
+$TabelaPerfil=str_replace("á","a",$TabelaPerfil);
+$TabelaPerfil=str_replace("à","a",$TabelaPerfil);
+$TabelaPerfil=str_replace("ã","a",$TabelaPerfil);
+$TabelaPerfil=str_replace("â","a",$TabelaPerfil);
+$TabelaPerfil=str_replace("é","e",$TabelaPerfil);
+$TabelaPerfil=str_replace("è","e",$TabelaPerfil);
+$TabelaPerfil=str_replace("ê","e",$TabelaPerfil);
+$TabelaPerfil=str_replace("í","i",$TabelaPerfil);
+$TabelaPerfil=str_replace("ì","i",$TabelaPerfil);
+$TabelaPerfil=str_replace("î","i",$TabelaPerfil);
+$TabelaPerfil=str_replace("ó","o",$TabelaPerfil);
+$TabelaPerfil=str_replace("ò","o",$TabelaPerfil);
+$TabelaPerfil=str_replace("õ","o",$TabelaPerfil);
+$TabelaPerfil=str_replace("ô","o",$TabelaPerfil);
+$TabelaPerfil=str_replace("ú","u",$TabelaPerfil);
+$TabelaPerfil=str_replace("ù","u",$TabelaPerfil);
+$TabelaPerfil=str_replace("û","u",$TabelaPerfil);
+$TabelaPerfil=str_replace("ç","c",$TabelaPerfil);
+
+$TabelaPerfil=str_replace(" ","_",$TabelaPerfil);
+$TabelaPerfil=str_replace("Á","A",$TabelaPerfil);
+$TabelaPerfil=str_replace("À","A",$TabelaPerfil);
+$TabelaPerfil=str_replace("Ã","A",$TabelaPerfil);
+$TabelaPerfil=str_replace("Â","A",$TabelaPerfil);
+$TabelaPerfil=str_replace("É","E",$TabelaPerfil);
+$TabelaPerfil=str_replace("È","E",$TabelaPerfil);
+$TabelaPerfil=str_replace("Ê","E",$TabelaPerfil);
+$TabelaPerfil=str_replace("Í","I",$TabelaPerfil);
+$TabelaPerfil=str_replace("Ì","I",$TabelaPerfil);
+$TabelaPerfil=str_replace("Î","I",$TabelaPerfil);
+$TabelaPerfil=str_replace("Ó","O",$TabelaPerfil);
+$TabelaPerfil=str_replace("Ò","O",$TabelaPerfil);
+$TabelaPerfil=str_replace("Ô","O",$TabelaPerfil);
+$TabelaPerfil=str_replace("Õ","O",$TabelaPerfil);
+$TabelaPerfil=str_replace("Ú","U",$TabelaPerfil);
+$TabelaPerfil=str_replace("Ù","U",$TabelaPerfil);
+$TabelaPerfil=str_replace("Û","U",$TabelaPerfil);
+$TabelaPerfil=str_replace("Ç","C",$TabelaPerfil);
+
 $tabela=@mysql_query("CREATE TABLE ".$TabelaPerfil."(
 codigo integer primary key auto_increment,
 id varchar(255),
 mensagens varchar(255),
 contatos varchar(255),
-imagem varchar(255)binary);",$conexao);
+imagem varchar(255)binary,
+dia varchar(60),
+mes varchar(60));",$conexao);
 
 
-$criaPasta=mkdir("usuarios/".tirarAcentos(strtoupper($TabelaPerfil)));
+$criaPasta=mkdir("usuarios/".strtoupper($TabelaPerfil));
 
  $arquivo_origem = "ListarPerfil.php";
  $arquivo_destino = "usuarios/".tirarAcentos(strtoupper($TabelaPerfil))."/index.php";
@@ -275,30 +360,26 @@ mkdir($pasta_dir);
 $arquivo_nome = $pasta_dir.$arquivo["name"];
 // Faz o upload da imagem
 move_uploaded_file($arquivo["tmp_name"], $arquivo_nome);
-$tituloPerfilMin=tirarAcentos(strtolower($tituloPerfil.'_'.$tituloPerfil1));
-$tituloPerfilTrim=tirarAcentos(rtrim($tituloPerfilMin));
-$incluImagem="Insert into $tituloPerfilMin ($tituloPerfilMin.contatos,$tituloPerfilMin.imagem)
-VALUES('$tituloPerfilMin.$tituloPerfilMin','$tituloPerfilMin.$arquivo_nome')";
+$tituloPerfilMin=strtolower($TabelaPerfil);
+$tituloPerfilTrim=rtrim($tituloPerfilMin);
+$incluImagem="Insert into $tituloPerfilMin ($tituloPerfilMin.contatos,$tituloPerfilMin.imagem,$tituloPerfilMin.dia,$tituloPerfilMin.mes)
+VALUES('$tituloPerfilMin.$tituloPerfilMin','$tituloPerfilMin.$arquivo_nome','$_POST[dia]','$_POST[mes]')";
 
 
 
 
-$incluImagem1 = "INSERT INTO $tituloPerfilMin (contatos,imagem) VALUES ('$tituloPerfilMin','$arquivo_nome')";
+$incluImagem1 = "INSERT INTO $tituloPerfilMin (contatos,imagem,dia,mes) VALUES ('$tituloPerfilMin','$arquivo_nome','$_POST[dia]','$_POST[mes]')";
 $inserir1=@mysql_query( $incluImagem1 )or die (mysql_error());
 
 $id = mysql_insert_id();
 
-$incluImagem2 = "UPDATE users SET imagem='$arquivo_nome' WHERE tituloPerfil='".strtoUpper($tituloPerfilMin)."'";
+$incluImagem2 = "UPDATE _users SET imagem='$arquivo_nome' WHERE tituloPerfil='".strtoUpper($tituloPerfilMin)."'";
 $inserir2=@mysql_query( $incluImagem2 )or die (mysql_error());
 
 
 
 
-//$incluImagem1="Insert into users (imagem)
-//VALUES('$arquivo_nome') ";
 
-//$inserir=@mysql_query($incluImagem) or die (mysql_error());
-//$inserir.=@mysql_query($incluImagem1) or die (mysql_error());
 @mysql_close();//fecha conex�o
 
 
@@ -307,16 +388,9 @@ $inserir2=@mysql_query( $incluImagem2 )or die (mysql_error());
 
 
 
-
-//$engatilha=@mysql_query("CREATE TRIGGER IncluiFoto AFTER INSERT ON $tituloPerfilMin 
-//   FOR EACH ROW SET users.imagem = 'arquivos/13_1515-dirapaes0201.jpg';",$conexao);
-
 }
 
 }
-
-
-
 
 
 ?>
@@ -512,7 +586,13 @@ Status:<select name="objetivo" readonly="true">
 <option value="casado(a)">Casado(a)</option>
 <option value="outro...">Outro...</option>
 </select> <br/>
-</font> <BR>
+</font> <BR/>
+
+</main>
+</div><!--row-->
+
+<div class="row">
+<main  class="container container-fluid  col-xs-12 " >
 <span STYLE="width:50%; margin-left:130px;">
 <div align="center">
 
@@ -522,6 +602,9 @@ Status:<select name="objetivo" readonly="true">
 </div>
 </span>
 </form>
+</main>
+</div><!--row-->
+
 
 </BODY>
 </HTML>
